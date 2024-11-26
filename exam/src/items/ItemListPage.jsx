@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
-
-const API_URL = 'http://localhost:5063';
+import API_URL from '../apiConfig';
 
 const ItemListPage = () => {
   const [items, setItems] = useState([]);

@@ -1,8 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
-
-const API_URL = 'http://localhost:5063'
+import API_URL from '../apiConfig';
 
 const HomePage = () => {
   return (
