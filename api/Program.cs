@@ -2,12 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using Exam.DAL;
 using Serilog;
 using Serilog.Events;
+using Newtonsoft.Json.Serialization;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-/*builder.Services.AddControllers().AddNewtonsoftJson(options => {
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-});*/
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
