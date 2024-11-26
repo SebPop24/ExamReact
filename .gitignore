@@ -1,0 +1,15 @@
+# Standard .NET-utviklingsfiler
+**/bin
+**/obj
+**/node_modules
+**/build
+ItemDatabase*
+*.dll
+*.pdb
+*.exe
+*.user
+*.suo
+*.cache
+*.csproj.user
+*.log
+*.vs/

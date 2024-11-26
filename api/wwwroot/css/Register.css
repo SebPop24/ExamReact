@@ -1,0 +1,116 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: 
+        radial-gradient(circle at 0% 0%, rgba(200, 255, 200, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(180, 255, 180, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(220, 255, 220, 0.2) 0%, transparent 40%),
+        white;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+h1 {
+    font-family: 'Poppins', sans-serif; /* Poppins-font */
+    font-weight: 700; /* Fet tekst */
+    font-size: 2.5rem; /* Størrelse på fonten */
+    text-align: center; /* Sentrer teksten */
+    color: #343a40; /* Mørk grå farge */
+    margin-bottom: 1.5rem; /* Gi litt avstand under */
+}
+
+
+/* Input-felt styling */
+.form-control {
+    border-radius: 30px;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 12px 20px 12px 45px; /* Rom for ikonet */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+/* Ikon-styling */
+.icon {
+    position: absolute;
+    left: 15px;
+    top: 23px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #888;
+    pointer-events: none; /* Hindrer interaksjon med ikonet */
+}
+
+/* Animasjon på SVG-ikon i input-felt */
+.form-group.position-relative:focus-within .icon svg path {
+    fill: #ff66b2; /* Endre farge ved fokus */
+    transform: scale(1.1); /* Gjør ikonet litt større ved fokus */
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+/* Knapp med hover-animasjon */
+.btn-primary {
+    background-color: #ff66b2;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    padding: 10px 30px;
+    max-width: 200px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+}
+
+.btn-primary:hover {
+    background-color: #ff4da6;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+/* Right-side Circle - Adjusted Background */
+.left-section {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: none;
+    z-index: 2; /* Ensure the text stays above the background */
+}
+
+.left-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0; /* Changed to right */
+    width: 50vw;
+    max-height: 60%; 
+    background-color: #00C896;
+    border-radius: 50%;
+    z-index: -1; /* Ensure the circle is behind the text */
+    transform: translateX(50%);
+}
+
+@media only screen and (min-width: 1000px) {
+    /* Background circle - placed behind everything */
+    .container:before {
+        content: "";
+        position: absolute;
+        height: 1500px;
+        width: 1500px;
+        top: 30%;
+        left: 50%; 
+        transform: translateY(-50%);
+        background-image: linear-gradient(-45deg, #01ff9e 0%, #048654 100%);
+        transition: 1.8s ease-in-out;
+        border-radius: 50%;
+        z-index: -2; /* Placing the circle behind everything else */
+    }
+}

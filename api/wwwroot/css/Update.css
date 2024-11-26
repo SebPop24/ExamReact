@@ -1,0 +1,101 @@
+/* Generell styling for hele siden */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Styling av overskriften inni skjemaet */
+.form-container h2 {
+    font-size: 28px; /* Større skrift */
+    font-weight: bold; /* Tykkere tekst */
+    color: #198754; /* Helsefokusert grønnfarge */
+    margin-bottom: 20px; /* Avstand til skjemaet */
+    text-align: center; /* Sentralisering av tekst */
+}
+
+/* Sentralisering og styling av form-container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #fff; /* Bakgrunnsfarge for skjemaet */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 450px; /* Bredde på skjemaet */
+    margin: 50px auto;
+}
+
+/* Input-felt (uten labels utenfor feltene) */
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Placeholder tekst i inputfeltene */
+.form-group input::placeholder {
+    color: #888; /* Farge på placeholder-teksten */
+}
+
+
+
+/* Knapp for å sende inn skjemaet */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+
+/* Tilbakestill knapp (Back to Table View) */
+a {
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Styling for bildet i skjemaet (img-thumbnail) */
+.img-thumbnail {
+    max-width: 150px; /* Begrens maksimal bredde */
+    max-height: 150px; /* Begrens maksimal høyde */
+    width: auto; /* Behold proporsjoner */
+    height: auto; /* Behold proporsjoner */
+    object-fit: contain; /* Tilpass bildet uten beskjæring */
+    border: none;
+}
+
+/* Valideringstekst for inputfeltene */
+.text-danger {
+    font-size: 14px;
+    color: #d32f2f;
+}
+
+/* Responsivitet for skjermen - tilpasser skjemaet til små skjermer */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%; /* Gjør skjemaet bredere på små skjermer */
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+}

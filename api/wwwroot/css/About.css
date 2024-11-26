@@ -1,0 +1,134 @@
+
+body {
+        background-color: #fbfdfb; /* Lys grønn bakgrunn */ 
+    }
+
+    /* Header styling */
+    .about-header {
+        text-align: center;
+        margin-top: 7rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .about-subtitle {
+        color: #39a554;
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.05rem;
+        font-style: italic;
+    }
+
+    .about-main-title {
+        background: linear-gradient(to right, #39a554, #66bb6a);
+        -webkit-background-clip: text;  /* For Chrome, Safari, Opera */
+        -moz-background-clip: text;     /* For older Firefox */
+        -ms-background-clip: text;      /* For older Internet Explorer */
+        background-clip: text;          /* Standard property */
+        color: transparent;
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        font-family: 'Georgia', serif;
+    }
+
+    /* Feature section styling */
+    .features {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        gap: 3rem;
+        margin-top: 8rem;
+    }
+
+    .feature-item {
+        flex: 1;
+        max-width: 320px;
+        padding: 2rem 0;
+        /* Fjernet boks-skygge og rammer */
+    }
+
+    .feature-logo {
+        width: 64px;
+        height: 64px;
+        fill: var(--first-color);
+        margin-bottom: var(--mb-2);
+        transition: transform 0.3s ease;
+    }
+
+    .feature-logo:hover {
+        transform: scale(1.1);
+    }
+
+    .feature-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(to right, #39a554, #66bb6a);
+        -webkit-background-clip: text;  /* For Chrome, Safari, Opera */
+        -moz-background-clip: text;     /* For older Firefox */
+        -ms-background-clip: text;      /* For older Internet Explorer */
+        background-clip: text;  
+        color: transparent;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-description {
+        font-size: 0.95rem;
+        color: #666;
+        font-style: italic;
+        line-height: 1.7;
+        font-weight: 300;
+        padding: 0 1rem;
+    }
+
+    /* Divider */
+    .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #ddd;
+        margin: 3rem auto;
+    }  
+     .cta-container {
+        text-align: center;
+        margin-top: 3rem;
+     }
+
+    /* CTA button */
+    .cta-button {
+        display: inline-block;
+        padding: 0.8rem 2.5rem;
+        background-color: #39a554;
+        color: white;
+        font-size: 1rem;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: skewX(-25deg);
+        transition: all 0.5s ease;
+    }
+
+    .cta-button:hover::before {
+        left: 125%;
+    }
+
