@@ -1,7 +1,13 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { Item } from '../types/item';
 
-const ItemTable = ({ items, apiUrl }) => {
+interface ItemTableProps {
+  items: Item[];
+  apiUrl: string;
+}
+
+const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
   return (
     <Table striped bordered hover>
   <thead>

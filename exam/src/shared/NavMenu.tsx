@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
-const NavMenu = () => {
+const NavMenu: React.FC = () => {
   return (
     <Navbar expand="lg">
       <Navbar.Brand href="/">MyShop</Navbar.Brand>

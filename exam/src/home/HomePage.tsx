@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import API_URL from '../apiConfig';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div className="text-center">
         <h1 className="display-4">Your Nutrition

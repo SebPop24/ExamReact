@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
-import API_URL from '../apiConfig';
+import { Item } from '../types/item';
+const API_URL = 'http://localhost:5063';
+//import API_URL from '../apiConfig';
 
-const ItemListPage = () => {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [showTable, setShowTable] = useState(true);
+
+
+const ItemListPage: React.FC = () => {
+  const [items, setItems] = useState<Item[]>([]); // State for storing items with Item type
+  const [loading, setLoading] = useState<boolean>(false); // State for loading indicator
+  const [error, setError] = useState<string | null>(null); // State for storing error messages
+  const [showTable, setShowTable] = useState<boolean>(true); // State to toggle between table and grid view
 
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 
@@ -49,6 +53,7 @@ const ItemListPage = () => {
       {showTable
         ? <ItemTable items={items} apiUrl={API_URL} />
         : <ItemGrid items={items} apiUrl={API_URL} />}
+         <Button href='/itemcreate' className="btn btn-secondary mt-3">Add New Item</Button>  
     </div>
   );
 };
