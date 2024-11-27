@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Card, Col, Row, Modal } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { Item } from '../types/item';
+import Details from './ItemModal'; // Import your updated Details component
 import '../css/Grid.css';
 
 interface ItemGridProps {
@@ -22,63 +23,68 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => 
     setShowModal(true);
   };
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedItem(null);
+  };
+
   return (
     <>
-    <div className="grid">
-      <Row xs={1} md={3} className="g-4">
-        {items.map(item => (
-          <Col key={item.itemId}>
-            <div className="card">
-              <a onClick={() => handleCardClick(item)} style={{ position: 'relative', cursor: 'pointer' }} className="w-100">
-                <img 
-                  src={`${apiUrl}${item.imageUrl}`} 
-                  className="img-fluid custom-image-size card-img-top" 
-                  alt={item.name} 
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{item.name}</h5>
-                  <p className="card-text">{energiToKcal(item.energi_Kj)} kcal</p>
-                </div>
-                {item.hasGreenKeyhole && (
-                  <img 
-                    src="/images/green_keyhole.jpg" 
-                    alt="Nøkkelhullsmerke" 
-                    className="keyhole-icon" 
+      {/* Grid of Items */}
+      <div className="grid">
+        <Row xs={1} md={3} className="g-4">
+          {items.map((item) => (
+            <Col key={item.itemId}>
+              <div className="card">
+                <a
+                  onClick={() => handleCardClick(item)}
+                  style={{ position: 'relative', cursor: 'pointer' }}
+                  className="w-100"
+                >
+                  <img
+                    src={`${apiUrl}${item.imageUrl}`}
+                    className="img-fluid custom-image-size card-img-top"
+                    alt={item.name}
                   />
-                )}
-              </a>
-            </div>
-          </Col>
-    
-        ))}
-      </Row>
-
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedItem?.name}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {selectedItem && (
-            <div>
-              <img 
-                src={`${apiUrl}${selectedItem.imageUrl}`}
-                alt={selectedItem.name}
-                className="modal-image"
-              />
-              <div className="modal-details">
-                <p>Energy: {energiToKcal(selectedItem.energi_Kj)} kcal</p>
-                <p>Fat: {selectedItem.fett} g</p>
-                <p>Protein: {selectedItem.protein} g</p>
-                <p>Carbohydrates: {selectedItem.karbohydrat} g</p>
-                <p>Salt: {selectedItem.salt} g</p>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.name}</h5>
+                    <p className="card-text">{energiToKcal(item.energi_Kj)} kcal</p>
+                  </div>
+                  {item.hasGreenKeyhole && (
+                    <img
+                      src="/images/green_keyhole.jpg"
+                      alt="Nøkkelhullsmerke"
+                      className="keyhole-icon"
+                    />
+                  )}
+                </a>
               </div>
-            </div>
-          )}
-        </Modal.Body>
-      </Modal>
-      </div>    
+            </Col>
+          ))}
+        </Row>
+      </div>
+
+      {/* Item Details Modal */}
+      {selectedItem && (
+        <Details
+          showModal={showModal}
+          handleClose={handleCloseModal}
+          name={selectedItem.name}
+          hasGreenKeyhole={selectedItem.hasGreenKeyhole}
+          imageUrl={selectedItem.imageUrl}
+          foodGroup={selectedItem.food_Group}
+          energyKj={selectedItem.energi_Kj}
+          fat={selectedItem.fett}
+          protein={selectedItem.protein}
+          carbohydrate={selectedItem.karbohydrat}
+          salt={selectedItem.salt}
+          itemId={selectedItem.itemId}
+          isAuthenticated={true} // Adjust as per actual user authentication status
+          onUpdate={(id) => console.log(`Update item ${id}`)} // Replace with actual update logic
+          onDelete={(id) => console.log(`Delete item ${id}`)} // Replace with actual delete logic
+        />
+      )}
     </>
-    
   );
 };
 

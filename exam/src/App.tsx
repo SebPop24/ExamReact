@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import HomePage from './home/HomePage';
-import AboutPage from './about/AboutPage'
+import AboutPage from './about/aboutPage'
 import ItemListPage from './items/ItemListPage';
 import NavMenu from './shared/NavMenu';
 import ItemCreatePage from './items/ItemCreatePage';

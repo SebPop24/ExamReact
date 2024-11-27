@@ -1,0 +1,99 @@
+/* Generelle tabellinnstillinger */
+
+.item-header {
+    font-weight: bold; /* Gjør teksten fet */
+    font-size: 1.8rem; /* Juster fontstørrelse hvis nødvendig */
+    color: #333; /* Valgfritt: Endre tekstfargen */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse !important; /* Sikrer at kantene ikke dobles */
+    background-color: white; /* Hvit bakgrunn for tabellen */
+    border: 2px solid #ccc !important; /* Tydelig ramme rundt hele tabellen */
+}
+
+/* Style for celler */
+td, th {
+    border: 2px solid #ccc !important; /* Tydelige rammer rundt hver celle */
+    padding: 10px; /* Ekstra padding for lesbarhet */
+    text-align: left; /* Venstrejustert tekst */
+    font-size: 1rem; /* Standard skriftstørrelse */
+    color: #555; /* Tekstfarge */
+}
+
+
+tbody tr:nth-child(odd) {
+    background-color: white; /* Hvit bakgrunn for oddetallsrader */
+}
+
+/* Style for første kolonne (f.eks. labels) */
+details td:first-child {
+    font-weight: bold;
+    color: #333; /* Mørkere tekstfarge for tydelighet */
+}
+
+/* Bakgrunnsfarge for partallsrader (stripede rader) */
+details tr:nth-child(even) {
+    background-color: #f2f2f2 !important; /* Litt lysere grå for å skille rader */
+}
+
+/* Nutrition table container */
+.nutrition-table-container {
+    background-color: #f9f9f9 !important; /* Lys grå bakgrunn rundt tabellen */
+    border-radius: 8px; /* Runde kanter for en moderne stil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Myk skygge */
+}
+
+div.nutrition-details .nutrition-table-container {
+    margin-top: -20px !important; /* Mer spesifikk selektor for å tvinge endringen */
+}
+
+/* Modal styles */
+.modal-content {
+    background-color: #fff; /* Hvit bakgrunn for modal */
+    border-radius: 12px; /* Runde kanter */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Myk skygge */
+    padding: 20px; /* Padding inni modalen */
+}
+
+/* Style for nøkkelhullsmerke */
+.keyhole-icon {
+    width: 30px; /* Ikonets bredde */
+    height: auto; /* Bevarer proporsjonene */
+    margin-left: 10px; /* Avstand mellom navn og ikon */
+}
+
+/* Style for summary i subtile knappestil */
+.summary-subtle {
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-bottom: -50px;
+    margin-top: -100px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+/* Hover-effekt for summary */
+.summary-subtle:hover {
+    background-color: #f1f1f1;
+}
+
+/* Roter pilen når "details" er åpnet */
+details[open] .summary-subtle::after {
+    transform: rotate(180deg);
+}
+
+/* Pilstil */
+.summary-subtle::after {
+    content: "▼";
+    font-size: 0.9rem;
+    color: #666;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+}
