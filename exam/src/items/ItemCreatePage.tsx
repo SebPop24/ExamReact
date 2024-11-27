@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ItemForm from './ItemForm';
 import { Item } from '../types/item';
 //import API_URL from '../apiConfig';
-const API_URL = 'http://localhost:5043'
+const API_URL = 'http://localhost:5063'
 
 const ItemCreatePage: React.FC = () => {
   const navigate = useNavigate(); // Create a navigate function
