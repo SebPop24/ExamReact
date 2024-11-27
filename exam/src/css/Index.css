@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
 
 /* Global styles */
-body {
+.index body {
     font-family: 'Open Sans', sans-serif;
     background: 
         radial-gradient(circle at 0% 0%, rgba(200, 255, 200, 0.3) 0%, transparent 50%),
@@ -16,12 +16,12 @@ body {
 }
 
 /* Container and layout styles */
-.container {
+.index .container {
     position: relative;
     z-index: 1;
 }
 
-.homepage-container {
+.index .homepage-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -29,7 +29,7 @@ body {
     gap: 3rem;
 }
 
-.homepage-text {
+.index .homepage-text {
     flex: 1;
     text-align: left;
     padding-right: 3rem;
@@ -38,7 +38,7 @@ body {
 }
 
 /* Typography */
-h1 {
+.index h1 {
     font-size: 3rem;
     font-weight: 800;
     color: #39a554;
@@ -50,7 +50,7 @@ h1 {
     animation: float 6s ease-in-out infinite;
 }
 
-p {
+.index p {
     font-size: 1.8rem;
     color: #2c3e50;
     font-weight: 600;
@@ -62,21 +62,21 @@ p {
 }
 
 /* Features section */
-.features-section {
+.index .features-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
 }
 
-.features-card {
+.index .features-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
 }
 
-.feature-item {
+.index .feature-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,13 +95,13 @@ p {
     position: relative;
 }
 
-.feature-item:hover {
+.index .feature-item:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12),
                 inset 0 0 0 2px rgba(57, 165, 84, 0.3);
 }
 
-.feature-item h4 {
+.index .feature-item h4 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #2c3e50;
@@ -109,7 +109,7 @@ p {
     min-height: 40px;
 }
 
-.feature-item p {
+.index .feature-item p {
     font-size: 0.9rem;
     margin: 0.8rem 0;
     min-height: 50px;
@@ -117,7 +117,7 @@ p {
 }
 
 /* Button styles */
-.small-button {
+.index .small-button {
     display: inline-block;
     padding: 0.6rem 1.2rem;
     background: #39a554;
@@ -134,7 +134,7 @@ p {
     margin-top: auto;
 }
 
-.small-button:hover {
+.index .small-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(57, 165, 84, 0.3);
     background: #45b563;

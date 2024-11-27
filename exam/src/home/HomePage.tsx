@@ -7,6 +7,7 @@ import '../css/Index.css';
 
 const HomePage = () => {
   return (
+    <div className="index">
     <div className="main-content">
       <div className="gradient-background"></div>
       <div className="container">
@@ -46,6 +47,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 };
