@@ -43,12 +43,12 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
             width="120" 
           />
         </td>
+        
+        <td>{item.hasGreenKeyhole ? 'Yes' : 'No'}</td>
 
         <td className="text-center">
             <Link to={`/itemupdate/${item.itemId}`}>Update</Link>
         </td>
-
-        <td>{item.hasGreenKeyhole ? 'Yes' : 'No'}</td>
       </tr>
     ))}
   </tbody>
