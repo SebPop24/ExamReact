@@ -4,6 +4,7 @@ import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
+import * as ItemService from './ItemService';
 
 
 
@@ -29,6 +30,7 @@ const ItemListPage: React.FC = () => {
     } finally {
       setLoading(false); // Set loading to false once the fetch is complete
     }
+  };
 
  // Set the view mode to local storage when the item is fetched
  useEffect(() => {

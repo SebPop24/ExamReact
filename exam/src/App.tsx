@@ -5,6 +5,9 @@ import ItemListPage from './items/ItemListPage'
 import NavMenu from './shared/NavMenu';
 import ItemCreatePage from './items/ItemCreatePage';
 import ItemUpdatePage from './items/ItemUpdatePage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 const App: React.FC = () => {
   return (
