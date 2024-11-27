@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ItemForm from './ItemForm';
 import { Item } from '../types/item';
-//import API_URL from '../apiConfig';
-const API_URL = 'http://localhost:5063'
+import API_URL from '../apiConfig';
+
 
 const ItemUpdatePage: React.FC = () => {
   const { itemId } = useParams<{ itemId: string }>(); // Get itemId from the URL

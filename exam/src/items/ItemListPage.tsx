@@ -3,8 +3,7 @@ import { Button } from 'react-bootstrap';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
-const API_URL = 'http://localhost:5063';
-//import API_URL from '../apiConfig';
+import API_URL from '../apiConfig';
 
 
 
