@@ -4,6 +4,8 @@ import ItemForm from './ItemForm';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
+import * as ItemService from './ItemService';
+
 
 const ItemUpdatePage: React.FC = () => {
   const { itemId } = useParams<{ itemId: string }>(); // Get itemId from the URL
@@ -15,14 +17,11 @@ const ItemUpdatePage: React.FC = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await fetch(`${API_URL}/api/itemapi/${itemId}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch item');
-        }
-        const data = await response.json();
+        const data = await ItemService.fetchItemById(itemId);
         setItem(data);
-      } catch (err) {
-        setError((err as Error).message);
+      } catch (error) {
+        setError('Failed to fetch item');
+        console.error('There was a problem with the fetch operation:', error);
       } finally {
         setLoading(false);
       }
@@ -32,27 +31,15 @@ const ItemUpdatePage: React.FC = () => {
   }, [itemId]);
 
   const handleItemUpdated = async (item: Item) => {
+
     try {
-      const response = await fetch(`${API_URL}/api/itemapi/update/${itemId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(item),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to update item');
-      }
-
-      const data = await response.json();
+      const data = await ItemService.updateItem(item.itemId, item);
       console.log('Item updated successfully:', data);
-      navigate('/items'); // Navigate back to the item list
-    } catch (err) {
-      console.error('Error updating item:', err);
-      setError((err as Error).message);
+      navigate('/items'); // Navigate back after successful creation
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
     }
-  };
+  }
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;

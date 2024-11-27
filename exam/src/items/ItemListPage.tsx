@@ -20,11 +20,7 @@ const ItemListPage: React.FC = () => {
     setError(null); // Clear any previous errors
 
     try {
-      const response = await fetch(`${API_URL}/api/itemapi/itemlist`);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
+      const data = await ItemService.fetchItems();
       setItems(data);
       console.log(data);
     } catch (error) {
@@ -33,7 +29,6 @@ const ItemListPage: React.FC = () => {
     } finally {
       setLoading(false); // Set loading to false once the fetch is complete
     }
-  };
 
  // Set the view mode to local storage when the item is fetched
  useEffect(() => {
@@ -58,9 +53,7 @@ const handleItemDeleted = async (itemId: number) => {
   const confirmDelete = window.confirm(`Are you sure you want to delete the item ${itemId}?`);
   if (confirmDelete) {
     try {
-      const response = await fetch(`${API_URL}/api/itemapi/delete/${itemId}`, {
-        method: 'DELETE',
-      });
+      await ItemService.deleteItem(itemId);
       setItems(prevItems => prevItems.filter(item => item.itemId !== itemId));
       console.log('Item deleted:', itemId);
     } catch (error) {

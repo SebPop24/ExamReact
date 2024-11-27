@@ -3,26 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import ItemForm from './ItemForm';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
-
+import * as ItemService from './ItemService';
 
 const ItemCreatePage: React.FC = () => {
   const navigate = useNavigate(); // Create a navigate function
 
   const handleItemCreated = async (item: Item) => {
     try {
-      const response = await fetch(`${API_URL}/api/itemapi/create`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(item),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
+      const data = await ItemService.createItem(item);
       console.log('Item created successfully:', data);
       navigate('/items'); // Navigate back after successful creation
     } catch (error) {
