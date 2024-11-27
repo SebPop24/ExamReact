@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import HomePage from './home/HomePage';
-import ItemListPage from './items/ItemListPage'
+import AboutPage from './about/AboutPage'
+import ItemListPage from './items/ItemListPage';
 import NavMenu from './shared/NavMenu';
 import ItemCreatePage from './items/ItemCreatePage';
 import ItemUpdatePage from './items/ItemUpdatePage';
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/items" element={<ItemListPage />} />
           <Route path="/itemcreate" element={<ItemCreatePage />} />
           <Route path="/itemupdate/:itemId" element={<ItemUpdatePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
