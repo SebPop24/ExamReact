@@ -31,14 +31,14 @@ const ItemUpdatePage: React.FC = () => {
     fetchItem();
   }, [itemId]);
 
-  const handleItemUpdated = async (updatedItem: Item) => {
+  const handleItemUpdated = async (item: Item) => {
     try {
       const response = await fetch(`${API_URL}/api/itemapi/update/${itemId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(updatedItem),
+        body: JSON.stringify(item),
       });
 
       if (!response.ok) {

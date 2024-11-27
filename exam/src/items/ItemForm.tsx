@@ -149,9 +149,8 @@ const ItemForm: React.FC<ItemFormProps> = ({
       </Form.Group>
 
       <Button variant="primary" type="submit">{isUpdate ? 'Update Item' : 'Create Item'}</Button>
-      <Button variant="secondary" onClick={onCancel} className="ms-2">
-        Cancel
-      </Button>
+      <Button variant="secondary" onClick={onCancel} className="ms-2">Cancel</Button>
+      
     </Form>
   );
 };

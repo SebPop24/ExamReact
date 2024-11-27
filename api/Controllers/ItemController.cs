@@ -122,6 +122,18 @@ public async Task<IActionResult> Update(int id, [FromBody] ItemDto itemDto)
     return StatusCode(500, "Internal server error");
 }
 
+ [HttpDelete("delete/{id}")]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        bool returnOk = await _itemRepository.Delete(id);
+        if (!returnOk)
+        {
+            _logger.LogError("[ItemAPIController] Item deletion failed for the ItemId {ItemId:0000}", id);
+            return BadRequest("Item deletion failed");
+        }
+        return NoContent(); // 200 Ok is commonly used when the server returns a response body with additional information about the result of the request. For a DELETE operation, there's generally no need to return additional data, making 204 NoContent a better fit.
+    }   
+
 
 }
 public class ItemController : Controller

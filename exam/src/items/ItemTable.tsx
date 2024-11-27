@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 interface ItemTableProps {
   items: Item[];
   apiUrl: string;
+  onItemDeleted: (itemId: number) => void;
 }
 
-const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
+const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted }) => {
   return (
     <Table striped bordered hover>
   <thead>
@@ -43,11 +44,15 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
             width="120" 
           />
         </td>
-        
+
         <td>{item.hasGreenKeyhole ? 'Yes' : 'No'}</td>
 
         <td className="text-center">
             <Link to={`/itemupdate/${item.itemId}`}>Update</Link>
+            <Link to="#"
+                  onClick={(event) => onItemDeleted(item.itemId)}
+                  className="btn btn-link text-danger"
+                >Delete</Link>
         </td>
       </tr>
     ))}

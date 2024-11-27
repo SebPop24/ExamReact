@@ -15,8 +15,8 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/items" element={<ItemListPage />} />
           <Route path="/itemcreate" element={<ItemCreatePage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="/itemupdate/:itemId" element={<ItemUpdatePage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </Container>

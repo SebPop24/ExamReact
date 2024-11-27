@@ -5,9 +5,10 @@ import { Item } from '../types/item';
 interface ItemGridProps {
   items: Item[];
   apiUrl: string;
+  onItemDeleted: (itemId: number) => void;
 }
 
-const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl }) => {
+const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => {
   
   
     return (
@@ -18,7 +19,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl }) => {
             <Card>
               <Card.Img variant="top" src={`${apiUrl}${item.imageUrl}`} alt={item.name} />
               <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
+                <Card.Title>{item.name} {item.itemId}</Card.Title>
                 <Card.Text>Food Group: {item.food_Group}</Card.Text>
                 <Card.Text>Energy: {item.energi_Kj} kJ</Card.Text>
                 <Card.Text>Fat: {item.fett} g</Card.Text>
@@ -28,7 +29,8 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl }) => {
                 <Card.Text>Has Green Keyhole: {item.hasGreenKeyhole ? 'Yes' : 'No'}</Card.Text>
                 
                 <div className="d-flex justify-content-between">
-                    <Button href={`/itemupdate/${item.itemId}`} variant="primary">Update</Button>                   
+                    <Button href={`/itemupdate/${item.itemId}`} variant="primary">Update</Button>    
+                    <Button onClick={(event) => onItemDeleted(item.itemId)} variant="danger">Delete</Button>                
                 </div>   
 
               </Card.Body>

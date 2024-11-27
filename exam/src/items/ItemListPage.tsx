@@ -35,9 +35,40 @@ const ItemListPage: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    fetchItems();
-  }, []);
+ // Set the view mode to local storage when the item is fetched
+ useEffect(() => {
+  const savedViewMode = localStorage.getItem('itemViewMode');
+  console.log('[fetch items] Saved view mode:', savedViewMode); // Debugging line
+  if (savedViewMode) {
+    if (savedViewMode === 'grid')
+      setShowTable(false)
+    console.log('show table', showTable);
+  }
+  fetchItems();
+}, []);
+
+// Save the view mode to local storage whenever it changes
+useEffect(() => {
+  console.log('[save view state] Saving view mode:', showTable ? 'table' : 'grid');
+  localStorage.setItem('itemViewMode', showTable ? 'table' : 'grid');
+}, [showTable]);
+
+
+const handleItemDeleted = async (itemId: number) => {
+  const confirmDelete = window.confirm(`Are you sure you want to delete the item ${itemId}?`);
+  if (confirmDelete) {
+    try {
+      const response = await fetch(`${API_URL}/api/itemapi/delete/${itemId}`, {
+        method: 'DELETE',
+      });
+      setItems(prevItems => prevItems.filter(item => item.itemId !== itemId));
+      console.log('Item deleted:', itemId);
+    } catch (error) {
+      console.error('Error deleting item:', error);
+      setError('Failed to delete item.');
+    }
+  }
+};
 
   return (
     <div>
@@ -50,8 +81,8 @@ const ItemListPage: React.FC = () => {
       </Button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {showTable
-        ? <ItemTable items={items} apiUrl={API_URL} />
-        : <ItemGrid items={items} apiUrl={API_URL} />}
+        ? <ItemTable items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
+        : <ItemGrid items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />}
          <Button href='/itemcreate' className="btn btn-secondary mt-3">Add New Item</Button>  
     </div>
   );
