@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import { Item } from '../types/item';
+import { Link } from 'react-router-dom';
 
 interface ItemTableProps {
   items: Item[];
@@ -21,6 +22,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
       <th>Salt (g)</th>
       <th>Image</th>
       <th>Has Green Keyhole</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -34,12 +36,18 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
         <td>{item.karbohydrat}</td>
         <td>{item.salt}</td>
         <td>
+          
           <img 
             src={`${apiUrl}${item.imageUrl}`} 
             alt={item.name} 
             width="120" 
           />
         </td>
+
+        <td className="text-center">
+            <Link to={`/itemupdate/${item.itemId}`}>Update</Link>
+        </td>
+
         <td>{item.hasGreenKeyhole ? 'Yes' : 'No'}</td>
       </tr>
     ))}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row, Button } from 'react-bootstrap';
 import { Item } from '../types/item';
 
 interface ItemGridProps {
@@ -26,6 +26,11 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl }) => {
                 <Card.Text>Carbohydrate: {item.karbohydrat} g</Card.Text>
                 <Card.Text>Salt: {item.salt} g</Card.Text>
                 <Card.Text>Has Green Keyhole: {item.hasGreenKeyhole ? 'Yes' : 'No'}</Card.Text>
+                
+                <div className="d-flex justify-content-between">
+                    <Button href={`/itemupdate/${item.itemId}`} variant="primary">Update</Button>                   
+                </div>   
+
               </Card.Body>
             </Card>
           </Col>

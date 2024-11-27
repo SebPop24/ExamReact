@@ -6,23 +6,29 @@ import { Item } from '../types/item';
 interface ItemFormProps {
   onItemChanged: (newItem: Item) => void;
   itemId?: number;
+  isUpdate?: boolean;
+  initialData?: Item;
 }
 
-const ItemForm: React.FC<ItemFormProps> = ({ onItemChanged, itemId }) => {
-  const [name, setName] = useState<string>('');
-  const [food_Group, setFoodGroup] = useState<string>('');
-  const [energi_Kj, setEnergiKj] = useState<number>(0);
-  const [fett, setFett] = useState<number>(0);
-  const [protein, setProtein] = useState<number>(0);
-  const [karbohydrat, setKarbohydrat] = useState<number>(0);
-  const [salt, setSalt] = useState<number>(0);
-  const [imageUrl, setImageUrl] = useState<string>('');
-  const [hasGreenKeyhole, setHasGreenKeyhole] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
+const ItemForm: React.FC<ItemFormProps> = ({
+  onItemChanged, 
+  itemId, 
+  isUpdate = false,
+  initialData}) => {
+  const [name, setName] = useState<string>(initialData?.name || '');
+  const [food_Group, setFoodGroup] = useState<string>(initialData?.food_Group || '');
+  const [energi_Kj, setEnergiKj] = useState<number>(initialData?.energi_Kj || 0);
+  const [fett, setFett] = useState<number>(initialData?.fett || 0);
+  const [protein, setProtein] = useState<number>(initialData?.protein || 0);
+  const [karbohydrat, setKarbohydrat] = useState<number>(initialData?.karbohydrat || 0);
+  const [salt, setSalt] = useState<number>(initialData?.salt || 0);
+  const [imageUrl, setImageUrl] = useState<string>(initialData?.imageUrl || '');
+  const [hasGreenKeyhole, setHasGreenKeyhole] = useState<boolean>(initialData?.hasGreenKeyhole || false);
+  //const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const onCancel = () => {
-    navigate(-1); // Navigate back
+  navigate(-1); // Navigate back
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -142,11 +148,7 @@ const ItemForm: React.FC<ItemFormProps> = ({ onItemChanged, itemId }) => {
         />
       </Form.Group>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-
-      <Button variant="primary" type="submit">
-        Create Item
-      </Button>
+      <Button variant="primary" type="submit">{isUpdate ? 'Update Item' : 'Create Item'}</Button>
       <Button variant="secondary" onClick={onCancel} className="ms-2">
         Cancel
       </Button>
