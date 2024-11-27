@@ -6,7 +6,7 @@ import HomePage from './home/HomePage';
 import ItemListPage from './items/ItemListPage';
 import ItemCreatePage from './items/ItemCreatePage';
 import ItemUpdatePage from './items/ItemUpdatePage';
-import AboutPage from './about/aboutPage';
+import AboutPage from './about/AboutPage';
 import Login from './account/Login';
 import Register from './account/Register';
 

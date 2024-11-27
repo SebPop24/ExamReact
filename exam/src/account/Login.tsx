@@ -1,55 +1,108 @@
 import React, { useState } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import '../css/Login.css';
 
-// Define the Login component
-const Login: React.FC = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const Login = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Replace this logic with your actual login logic
-    if (username === 'admin' && password === 'password') {
-      console.log('Login successful');
-      navigate('/'); // Redirect to the home page
-    } else {
-      console.log('Login failed');
-    }
+    // Add your login logic here
+    console.log('Login attempt:', formData);
+    // On successful login:
+    // navigate('/');
   };
 
   return (
-    <Container className="mt-5">
-      <h2>Login</h2>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formUsername">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+    <div className="login">
+    <div className="container-fluid">
+      <div className="row min-vh-100">
+        {/* Left section */}
+        <div className="col-md-6 d-none d-md-flex flex-column align-items-center left-section">
+          <h2>New here?</h2>
+          <p>Register yourself to access our services.</p>
+          <Link to="/register" className="btn btn-outline-light mt-3">
+            Sign Up
+          </Link>
+          <img 
+            src="/images/SignUp.png" 
+            alt="Illustration" 
+            className="img-fluid mt-4" 
+            style={{ maxWidth: '70%' }}
           />
-        </Form.Group>
+        </div>
 
-        <Button variant="primary" type="submit">
-          Login
-        </Button>
-      </Form>
-    </Container>
+        {/* Right section - Login Form */}
+        <div className="col-md-6 d-flex align-items-center justify-content-center">
+          <div className="col-md-8 col-lg-6">
+            <h1 className="text-center mb-4">Sign In</h1>
+            <form 
+              onSubmit={handleSubmit} 
+              className="text-center w-100" 
+              style={{ maxWidth: '400px' }}
+            >
+              {/* Email input field with SVG icon */}
+              <div className="form-group mb-3 position-relative">
+                <span className="position-absolute" style={{ left: '12px', top: '50%', transform: 'translateY(-50%)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4C2.89 4 2 4.9 2 6V18C2 19.1 2.89 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#888"/>
+                  </svg>
+                </span>
+                <input
+                  type="email"
+                  name="email"
+                  className="form-control pl-5"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  style={{ paddingLeft: '40px' }}
+                />
+              </div>
+
+              {/* Password input field with SVG icon */}
+              <div className="form-group mb-3 position-relative">
+                <span className="position-absolute" style={{ left: '12px', top: '50%', transform: 'translateY(-50%)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 17C11.45 17 11 16.55 11 16V14C11 13.45 11.45 13 12 13C12.55 13 13 13.45 13 14V16C13 16.55 12.55 17 12 17ZM17 8V7C17 4.24 14.76 2 12 2C9.24 2 7 4.24 7 7V8C5.9 8 5 8.9 5 10V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V10C19 8.9 18.1 8 17 8ZM9 7C9 5.34 10.34 4 12 4C13.66 4 15 5.34 15 7V8H9V7ZM17 20H7V10H17V20Z" fill="#888"/>
+                  </svg>
+                </span>
+                <input
+                  type="password"
+                  name="password"
+                  className="form-control pl-5"
+                  placeholder="Password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                  style={{ paddingLeft: '40px' }}
+                />
+              </div>
+
+              <button type="submit" className="btn btn-primary w-100">
+                SIGN IN
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   );
 };
 
-// Export the Login component
 export default Login;
