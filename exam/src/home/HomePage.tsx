@@ -30,21 +30,28 @@ const HomePage = () => {
 
       <section className="features-section">
         <div className="features-card">
-          <div className="feature-item">
-            <h4>Add New Foods</h4>
-            <p>Track food items and ensure they meet health standards.</p>
-            <Link to="/itemcreate" className="small-button">Get Started</Link>
-          </div>
-          <div className="feature-item">
-            <h4>Nutritional Info</h4>
-            <p>View nutritional info to make informed choices and maintain balance.</p>
-            <Link to="/items" className="small-button">Learn More</Link>
-          </div>
-          <div className="feature-item">
-            <h4>Eat Healthy</h4>
-            <p>View nutritional info to make informed choices and maintain balance.</p>
-            <Link to="/about" className="small-button">Find Out How</Link>
-          </div>
+        <div className="feature-item">
+  <h4>Add New Foods</h4>
+  <p>Track food items and ensure they meet health standards.</p>
+  <Link to="/itemcreate" className="small-button" onClick={() => window.scrollTo(0, 0)}>
+    Get Started
+  </Link>
+</div>
+<div className="feature-item">
+  <h4>Nutritional Info</h4>
+  <p>View nutritional info to make informed choices and maintain balance.</p>
+  <Link to="/items" className="small-button" onClick={() => window.scrollTo(0, 0)}>
+    Learn More
+  </Link>
+</div>
+<div className="feature-item">
+  <h4>Eat Healthy</h4>
+  <p>View nutritional info to make informed choices and maintain balance.</p>
+  <Link to="/about" className="small-button" onClick={() => window.scrollTo(0, 0)}>
+    Find Out How
+  </Link>
+</div>
+
         </div>
       </section>
     </div>
