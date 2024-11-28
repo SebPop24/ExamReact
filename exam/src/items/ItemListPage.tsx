@@ -67,9 +67,6 @@ const handleItemDeleted = async (itemId: number) => {
 
   return (
     <div>
-      <Button onClick={fetchItems} className="btn btn-primary mb-3 me-2" disabled={loading}>
-        {loading ? 'Loading...' : 'Refresh Items'}
-      </Button>
       <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
         {showTable ? 'Display Grid' : 'Display Table'}
       </Button>
