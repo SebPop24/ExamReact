@@ -9,6 +9,7 @@ import ItemUpdatePage from './items/ItemUpdatePage';
 import AboutPage from './about/AboutPage';
 import Login from './account/Login';
 import Register from './account/Register';
+import Footer from './shared/Footer';
 
 const App: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/register" element={<Register />} /> {/* Added Register Route */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <Footer /> 
       </Container>
     </Router>
   );
