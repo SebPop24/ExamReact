@@ -77,9 +77,14 @@
 
 /* Keyhole icon styling */
 .grid .keyhole-icon {
-    width: 20px; /* Adjusted size */
-    height: auto;
-}
+    position: absolute;
+    top: 10px; /* Avstand fra toppen */
+    right: 10px; /* Avstand fra høyre */
+    width: 30px; /* Juster størrelse på ikonet */
+    height: auto; /* Beholder proporsjoner */
+    z-index: 1; /* Sørger for at det vises foran annet innhold */
+  }
+  
 
 /* "View More" Button styling */
 .grid #viewMoreContainer {
