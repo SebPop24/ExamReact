@@ -8,6 +8,13 @@ const NavMenu: React.FC = () => {
         <Navbar expand="lg" className="navbar-custom">
           <Container fluid>
             <Navbar.Brand href="/">
+              <img
+                src="./images/logo.png"
+                height="40"
+                className="d-inline-block align-top me-2"
+                alt="Logo"
+                style={{ marginBottom: '5px' }}
+              />
               My Nutrition Tracker
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

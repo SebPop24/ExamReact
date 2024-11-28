@@ -1,11 +1,14 @@
 /* Layout.css */
-/* Navbar styles remain the same */
+/* Enhanced navbar styles with border and shadow */
 .navbar-custom {
     background-color: white;
     padding: 1rem 0;
-  }
-  
-  .navbar-custom .navbar-brand {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Rest of the navbar styles remain the same */
+.navbar-custom .navbar-brand {
     font-family: 'Playfair Display', serif;
     color: #363636;
     font-size: 1.9rem;
@@ -16,14 +19,27 @@
     transition: all 0.3s ease;
     text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.08);
     display: inline-block;
-  }
-  
-  .navbar-custom .navbar-brand:hover {
+}
+
+.navbar-custom .navbar-brand img {
+    height: 40px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+/* Adjust the brand container to better align items */
+.navbar-custom .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-custom .navbar-brand:hover {
     transform: translateY(-1px);
     color: #2a2a2a;
-  }
-  
-  .navbar-custom .navbar-brand::after {
+}
+
+.navbar-custom .navbar-brand::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -34,14 +50,20 @@
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
-  }
-  
-  .navbar-custom .navbar-brand:hover::after {
+}
+
+.navbar-custom .navbar-brand:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-  }
-  
-  .navbar-custom .nav-link {
+}
+
+.navbar-custom {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.navbar-custom .nav-link {
     color: #333 !important;
     margin: 0 0.8rem;
     padding: 0.5rem 0.2rem;
@@ -51,14 +73,14 @@
     font-size: 0.9rem;
     position: relative;
     transition: all 0.3s ease;
-  }
-  
-  .navbar-custom .nav-link:hover {
+}
+
+.navbar-custom .nav-link:hover {
     color: #000 !important;
     transform: translateY(-1px);
-  }
-  
-  .navbar-custom .nav-link::before {
+}
+
+.navbar-custom .nav-link::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -69,72 +91,69 @@
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;
-  }
-  
-  .navbar-custom .nav-link:hover::before {
+}
+
+.navbar-custom .nav-link:hover::before {
     transform: scaleX(1);
     transform-origin: left;
-  }
-  
-  .navbar-custom .dropdown-toggle {
+}
+
+.navbar-custom .dropdown-toggle {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 0.9rem;
-  }
-  
-  .navbar-custom .dropdown-menu {
+}
+
+.navbar-custom .dropdown-menu {
     background-color: white;
     border: 1px solid #f0f0f0;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     margin-top: 0.5rem;
-  }
-  
-  .navbar-custom .dropdown-item {
+}
+
+.navbar-custom .dropdown-item {
     color: #333;
     padding: 0.7rem 1.5rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
-  }
-  
-  .navbar-custom .dropdown-item:hover {
+}
+
+.navbar-custom .dropdown-item:hover {
     background-color: #f8f9fa;
     color: #000;
     padding-left: 1.8rem;
-  }
-  
+}
 
-
-  /* Mobile responsive adjustments */
-  @media (max-width: 991.98px) {
-    /* Previous navbar mobile styles remain the same */
+/* Mobile responsive adjustments */
+@media (max-width: 991.98px) {
     .navbar-custom .navbar-collapse {
-      padding: 1rem 0;
+        padding: 1rem 0;
     }
-    
+
     .navbar-custom .nav-link {
-      padding: 0.75rem 0;
+        padding: 0.75rem 0;
     }
-    
+
     .navbar-custom .nav-link::before {
-      display: none;
+        display: none;
     }
-    
+
     .navbar-custom .navbar-brand {
-      font-size: 1.7rem;
+        font-size: 1.7rem;
     }
-    
+
     .navbar-custom .dropdown-menu {
-      border: none;
-      box-shadow: none;
-      padding: 0;
+        border: none;
+        box-shadow: none;
+        padding: 0;
     }
-    
+
     .navbar-custom .dropdown-item {
-      padding: 0.75rem 1rem;
+        padding: 0.75rem 1rem;
     }
-  }
+}
 
   
