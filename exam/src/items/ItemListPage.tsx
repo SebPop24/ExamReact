@@ -67,9 +67,17 @@ const handleItemDeleted = async (itemId: number) => {
 
   return (
     <div>
-      <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
-        {showTable ? 'Display Grid' : 'Display Table'}
-      </Button>
+     <Button 
+  onClick={toggleTableOrGrid} 
+  className="btn p-0 bg-transparent border-0"
+>
+  <img 
+    src={showTable ? "../images/grid-view.jpg" : "../images/table.png"} 
+    alt="Toggle View" 
+    style={{ width: '35px', height: '35px' }} 
+  />
+</Button>
+
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {showTable
         ? <ItemTable items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />

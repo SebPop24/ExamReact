@@ -1,4 +1,11 @@
 
+.btn img {
+    outline: none;
+  }
+  .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
 /* Header styling */
 .table .page-title {
     font-size: 28px;
