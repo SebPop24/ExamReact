@@ -55,8 +55,8 @@
 }
 
 .table .action-links {
-    display: flex;
-    gap: 12px;
+    /* display: flex;
+    gap: 12px; */
 }
 
 .table .action-links a {
@@ -104,16 +104,11 @@
 .table .create-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4CAF50;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
     font-weight: bold;
-}
-
-.table .create-button:hover {
-    background-color: #45a049;
 }
 
 .table html {
@@ -157,7 +152,7 @@ overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 @media (min-width: 768px) {
-    .modal-content {
+    .table .modal-content {
         width: 500px; /* Fixed width on medium screens */
         height: auto; /* Allow height to adapt */
     }

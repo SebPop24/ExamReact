@@ -19,10 +19,9 @@ const ItemCreatePage: React.FC = () => {
   }
   
   return (
-    <div>
-      <h2>Create New Item</h2>
+    
       <ItemForm onItemChanged={handleItemCreated}/>
-    </div>
+  
   );
 };
 

@@ -41,7 +41,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isA
               <th>Salt per 100g</th>
               <th>Image</th>
               <th>Keyhole</th>
-              {isAuthenticated && <th>Actions</th>}
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -70,7 +70,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isA
                     />
                   )}
                 </td>
-                {isAuthenticated && (
+                
                   <td className="action-links">
                     <Link to={`/itemupdate/${item.itemId}`} className="update-link">
                       Update
@@ -86,7 +86,6 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isA
                       Delete
                     </Link>
                   </td>
-                )}
               </tr>
             ))}
           </tbody>

@@ -67,7 +67,6 @@ const handleItemDeleted = async (itemId: number) => {
 
   return (
     <div>
-      <h1>Items</h1>
       <Button onClick={fetchItems} className="btn btn-primary mb-3 me-2" disabled={loading}>
         {loading ? 'Loading...' : 'Refresh Items'}
       </Button>

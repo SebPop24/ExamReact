@@ -1,0 +1,99 @@
+/* Navbar Styling for My Nutrition Tracker */
+
+/* Ensure Navbar spans full width */
+.navbar-custom {
+    width: 100%;
+    background-color: #2f4f4f; /* Rich dark teal */
+    border-bottom: 2px solid #2f4f4f; /* Highlight green border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+}
+
+/* Brand Styling */
+.navbar-custom .navbar-brand {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: color 0.3s ease;
+}
+.navbar-custom .navbar-brand:hover {
+    color: #4CAF50;
+}
+
+/* Navbar Links */
+.navbar-custom .nav-link {
+    color: #d0f0c0;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Link Hover Effect */
+.navbar-custom .nav-link:hover {
+    color: #ffffff;
+    background-color: #2f4f4f;
+}
+
+/* Active Link */
+.navbar-custom .nav-link.active {
+    color: #ffffff;
+    background-color: #2f4f4f;
+}
+
+/* Toggler Button for Mobile */
+.navbar-custom .navbar-toggler {
+    border: none;
+    color: #ffffff;
+}
+.navbar-custom .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28208, 240, 192, 0.9%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Dropdown Styling */
+.navbar-custom .dropdown-menu {
+    background-color: #2f4f4f;
+    border: 1px solid #2f4f4f;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 0;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-custom .dropdown-item {
+    color: #d0f0c0;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(52, 199, 89, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
+}
+
+.navbar-custom .dropdown-item:hover {
+    color: #ffffff;
+    background-color: #2f4f4f;
+    padding-left: 25px;
+}
+
+.navbar-custom .dropdown-item:last-child {
+    border-bottom: none;
+}
+
+/* Dropdown Slide Animation */
+.navbar-custom .dropdown-menu.show {
+    animation: dropdownSlide 0.3s ease forwards;
+}
+
+@keyframes dropdownSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
