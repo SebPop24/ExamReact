@@ -33,12 +33,12 @@ const HomePage = () => {
           <div className="feature-item">
             <h4>Add New Foods</h4>
             <p>Track food items and ensure they meet health standards.</p>
-            <Link to="/item/create" className="small-button">Get Started</Link>
+            <Link to="/itemcreate" className="small-button">Get Started</Link>
           </div>
           <div className="feature-item">
             <h4>Nutritional Info</h4>
             <p>View nutritional info to make informed choices and maintain balance.</p>
-            <Link to="/item/products" className="small-button">Learn More</Link>
+            <Link to="/items" className="small-button">Learn More</Link>
           </div>
           <div className="feature-item">
             <h4>Eat Healthy</h4>

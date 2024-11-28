@@ -66,19 +66,34 @@ const handleItemDeleted = async (itemId: number) => {
 };
 
   return (
-    <div>
-      <Button onClick={fetchItems} className="btn btn-primary mb-3 me-2" disabled={loading}>
-        {loading ? 'Loading...' : 'Refresh Items'}
-      </Button>
-      <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
-        {showTable ? 'Display Grid' : 'Display Table'}
-      </Button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {showTable
-        ? <ItemTable items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
-        : <ItemGrid items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />}
-         <Button href='/itemcreate' className="btn btn-secondary mt-3">Add New Item</Button>  
-    </div>
+<div>
+  <div className="d-flex justify-content-between align-items-center mt-3 mb-4">
+    {/* Toggle Button */}
+    <Button 
+      onClick={toggleTableOrGrid} 
+      className="btn p-0 bg-transparent border-0">
+      <img 
+        src={showTable ? "../images/grid-view.jpg" : "../images/table.png"} 
+        alt="Toggle View" 
+        style={{ width: '35px', height: '35px' }} 
+      />
+    </Button>
+
+    {/* Create New Item Button */}
+    <Button href="/itemcreate" className="btn btn-success">
+      Create New Item
+    </Button>
+  </div>
+
+  {/* Error Message */}
+  {error && <p style={{ color: 'red' }}>{error}</p>}
+
+  {/* Display Table or Grid */}
+  {showTable
+    ? <ItemTable items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
+    : <ItemGrid items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />}
+</div>
+
   );
 };
 
