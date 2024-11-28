@@ -4,7 +4,7 @@ import '../css/Layout.css';
 
 const NavMenu: React.FC = () => {
   return (
-    <header>
+    <header> 
         <Navbar expand="lg" className="navbar-custom">
           <Container fluid>
             <Navbar.Brand href="/">
