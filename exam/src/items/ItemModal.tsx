@@ -15,7 +15,6 @@ interface DetailsProps {
   carbohydrate: number;
   salt: number;
   itemId: number;
-  isAuthenticated: boolean;
   onUpdate: (id: number) => void;
   onDelete: (id: number) => void;
 }
@@ -33,25 +32,19 @@ const Details: React.FC<DetailsProps> = ({
   carbohydrate,
   salt,
   itemId,
-  isAuthenticated,
   onUpdate,
   onDelete,
 }) => {
   return (
-    <Modal show={showModal} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>{name}</Modal.Title>
+    <Modal size={"lg"} show={showModal} onHide={handleClose}>
+      <Modal.Header style={{ "fontWeight": "700"}} closeButton>
+        <Modal.Title>{name} {hasGreenKeyhole && (
+              <img src="/images/green_keyhole.jpg" alt="Nøkkelhullsmerke" className="keyhole-icon"  />
+            )}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div>
-          <h3 className="item-header my-5">
-            {name}
-            {hasGreenKeyhole && (
-              <img src="/images/green_keyhole.jpg" alt="Nøkkelhullsmerke" className="keyhole-icon" />
-            )}
-          </h3>
-
-          <div className="row gx-5">
+        <div className='details'>
+          <div className="row gx-5 my-3">
             {/* Image Section */}
             <div className="col-md-5 position-relative">
               <img alt={name} src={imageUrl} className="product-image img-fluid" />
@@ -59,18 +52,6 @@ const Details: React.FC<DetailsProps> = ({
 
             {/* Nutritional Information Section */}
             <div className="col-md-7">
-              {/* Action Links for Authenticated Users */}
-              {isAuthenticated && (
-                <div className="static-actions mb-3">
-                  <button className="update-link" onClick={() => onUpdate(itemId)}>
-                    Update
-                  </button>
-                  <button className="delete-link" onClick={() => onDelete(itemId)}>
-                    Delete
-                  </button>
-                </div>
-              )}
-
               {/* Nutritional Information in a dropdown that starts open */}
               <details className="nutrition-details" style={{ marginTop: '-20px' }} open>
               <summary className="summary-subtle">Næringsinnhold per 100 gram</summary>
@@ -104,16 +85,19 @@ const Details: React.FC<DetailsProps> = ({
                     </tbody>
                   </table>
                 </div>
+                <div className="static-actions mb-3">
+                    <button className="update-link" onClick={() => onUpdate(itemId)}>
+                      Update
+                    </button>
+                    <button className="delete-link" onClick={() => onDelete(itemId)}>
+                      Delete
+                    </button>
+                </div>
               </details>
             </div>
           </div>
         </div>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 };

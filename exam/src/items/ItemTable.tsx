@@ -12,7 +12,7 @@ interface ItemTableProps {
   isAuthenticated?: boolean;
 }
 
-const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isAuthenticated }) => {
+const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted}) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
@@ -29,7 +29,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isA
   return (
     <>
       <div className="table">
-        <Table striped bordered hover style={{ overflowY: 'scroll' }}>
+        <Table striped bordered style={{ overflowY: 'scroll' }}>
           <thead>
             <tr>
               <th>Name</th>
@@ -47,7 +47,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isA
           <tbody>
             {items.map((item) => (
               <tr key={item.itemId} onClick={() => handleRowClick(item)} className="open-modal">
-                <td>{item.name}</td>
+                <td style={{ fontWeight: 700 }}>{item.name}</td>
                 <td>{item.food_Group}</td>
                 <td>{item.energi_Kj} kj</td>
                 <td>{item.fett} g</td>
@@ -56,7 +56,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isA
                 <td>{item.salt} g</td>
                 <td>
                   <img
-                    src={`${apiUrl}${item.imageUrl}`}
+                    src={`${item.imageUrl}`}
                     alt={item.name}
                     style={{ maxWidth: '50px', maxHeight: '50px', display: 'block', margin: '0 auto' }}
                   />
@@ -71,20 +71,11 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isA
                   )}
                 </td>
                 
-                  <td className="action-links">
-                    <Link to={`/itemupdate/${item.itemId}`} className="update-link">
-                      Update
-                    </Link>
-                    <Link
-                      to="#"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onItemDeleted(item.itemId);
-                      }}
-                      className="delete-link"
-                    >
-                      Delete
-                    </Link>
+                  <td>
+                    <div style={{'display': 'flex'}}>
+                      <Link to={`/itemupdate/${item.itemId}`} className="update-link"> Update</Link>
+                      <Link style={{marginLeft: '5px'}} to="#"onClick={(e) => { e.stopPropagation(); onItemDeleted(item.itemId);}} className="delete-link"> Delete </Link>
+                    </div>
                   </td>
               </tr>
             ))}
@@ -106,7 +97,6 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted, isA
             carbohydrate={selectedItem.karbohydrat}
             salt={selectedItem.salt}
             itemId={selectedItem.itemId}
-            isAuthenticated={isAuthenticated ?? false} // Adjust as per actual user authentication status
             onUpdate={(id) => console.log(`Update item ${id}`)} // Replace with actual update logic
             onDelete={(id) => console.log(`Delete item ${id}`)} // Replace with actual delete logic
           />

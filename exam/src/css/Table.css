@@ -1,69 +1,38 @@
-
-.btn img {
-    outline: none;
-  }
-  .btn:focus {
-    outline: none;
-    box-shadow: none;
-  }
-/* Header styling */
-.table .page-title {
-    font-size: 28px;
-    color: #333;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* Styling for View Switch Button */
-.table .view-switch-button {
-    display: inline-block;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.table .view-switch-button:hover {
-    background-color: whitesmoke;
-}
-
 .table table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-.table th {
-    background-color: #2f4f4f;
-    color: white;
-    padding: 12px;
-    text-align: left;
-    font-weight: bold;
+    border-collapse: collapse; /* Sikrer at celler deler kantlinjer */
+    background-color: white; /* Bakgrunnsfarge for tabellen */
+    border: 1px solid #ddd; /* Legger til en lys grå ramme rundt hele tabellen */
 }
 
-.table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    transition: background-color 0.3s;
-    text-align: center;
-    vertical-align: middle;
+/* Header-styling */
+.table thead th {
+    background-color: #05954F; /* Velg ønsket bakgrunnsfarge for headeren */
+    color: white; /* Tekstfarge */
+    font-weight: bold; /* Fet skrift */
+    border: 1px solid #ddd; /* Legger til ramme mellom headercellene */
+    text-align: center; /* Justerer teksten midtstilt */
 }
 
-.table tr:hover {
-    background-color: #f1f1f1;
+/* Cellestil (vanlig innhold) */
+.table td, th {
+    padding: 10px; /* Gjør cellene mer lesbare */
+    border: 1px solid #ddd; /* Gir hver celle en lys grå ramme */
+    text-align: left; /* Venstrejustering for tekst */
 }
 
-.table tr:nth-child(even) {
-    background-color: #f9f9f9;
+/* Stripede rader for bedre lesbarhet */
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Lys grå for partallsrader */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: white; /* Hvit for oddetallsrader */
 }
 
 .table .action-links {
-    /* display: flex;
-    gap: 12px; */
+    display: flex;
+    gap: 12px;
 }
 
 .table .action-links a {
@@ -106,56 +75,6 @@
     height: auto;
     display: inline-block;
     margin: 0 auto;
-}
-
-.table .create-button {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.table html {
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
-.table main {
-    min-height: 100vh;
-    padding-bottom: 2rem;
-}
-/* Modal styles */
-.table .modal {
-display: none; /* Hidden by default */
-    justify-content: center; /* Center horizontally */
-align-items: center; /* Center vertically */
-position: fixed; /* Stay in place */
-z-index: 1000; /* Sit on top */
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: hidden; /* Disable all scroll */
-background-color: rgba(0, 0, 0, 0.7); /* Darker background for better focus */
-padding-top: 150px; /* Space from the top */
-}
-
-.table .modal-content {
-background-color: #fff;
-margin: auto; /* Center the modal */
-padding: 30px; /* Increased padding for a spacious feel */
-border: none; /* No border */
-width: 80%; /* Wider width for larger screens */
-max-width: 800px; /* Increased maximum width for better manageability */
-height: 620px; /* Increased height for all modals */
-border-radius: 12px; /* Rounded corners for a modern look */
-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-transition: all 0.3s ease; /* Smooth transition for all properties */
-overflow-y: auto; /* Enable vertical scrolling if content is too tall */
-overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 @media (min-width: 768px) {

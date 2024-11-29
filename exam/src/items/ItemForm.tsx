@@ -177,8 +177,11 @@ const ItemForm: React.FC<ItemFormProps> = ({
 
         <Form.Group className="form-group">
           <Form.Control
-            type="file"
-            accept="image/*"
+            type="text"
+            placeholder="Image url"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+            required
           />
         </Form.Group>
 

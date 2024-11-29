@@ -80,9 +80,22 @@ const handleItemDeleted = async (itemId: number) => {
     </Button>
 
     {/* Create New Item Button */}
-    <Button href="/itemcreate" className="btn btn-success">
-      Create New Item
-    </Button>
+    <Button
+  href="/itemcreate"
+  className="btn"
+  style={{
+    backgroundColor: "#05954F",
+    display: "inline-block",
+    padding: "10px 20px",
+    color: "white",
+    textDecoration: "none", // Use camelCase for inline styles
+    borderRadius: "5px", // Use camelCase for inline styles
+    marginTop: "20px", // Use camelCase for inline styles
+    fontWeight: "bold", // Use camelCase for inline styles
+  }}
+  > Create New Item
+  </Button>
+
   </div>
 
   {/* Error Message */}

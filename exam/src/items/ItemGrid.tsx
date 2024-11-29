@@ -79,7 +79,6 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => 
           carbohydrate={selectedItem.karbohydrat}
           salt={selectedItem.salt}
           itemId={selectedItem.itemId}
-          isAuthenticated={true} // Adjust as per actual user authentication status
           onUpdate={(id) => console.log(`Update item ${id}`)} // Replace with actual update logic
           onDelete={(id) => console.log(`Delete item ${id}`)} // Replace with actual delete logic
         />

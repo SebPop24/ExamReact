@@ -1,15 +1,15 @@
- using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Exam.Attributes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Exam.DTOs
 {
- 
- 
- public class ItemDto
+
+
+    public class ItemDto
     {
-        
+
         public int ItemId { get; set; }
 
         // Validation for the Name property 
@@ -48,16 +48,9 @@ namespace Exam.DTOs
         public double Salt { get; set; } = 0;
 
         // Validation for ImageUrl
-        [RegularExpression(@"[a-zA-ZæøåÆØÅ., \-]{1,20}", ErrorMessage = "ImageUrl must be letters and between 1 to 20 characters.")]
-         [Display(Name = "Image URL")]
+        [Display(Name = "Image URL")]
         public string ImageUrl { get; set; } = string.Empty;
 
         public bool HasGreenKeyhole { get; set; }
-
-
-        // Property to handle file upload, not mapped to the database
-        [NotMapped]
-        [AllowedFileExtensions(new string[] { ".jpg", ".jpeg", ".png",}, ErrorMessage = "Only image files (.jpg, .jpeg, .png) are allowed.")]
-        public IFormFile? ImageFile { get; set; }
     }
 }

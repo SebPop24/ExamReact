@@ -17,6 +17,7 @@ const HomePage = () => {
             <p>Stay on top of your health with simple,<br />insightful tracking.</p>
           </div>
           
+          <div style={{ "padding": "5%"}} className="w-50">
           <Carousel>
             <Carousel.Item>
               <Image src={`${API_URL}/images/nøkkelhull.png`} className="d-block w-100" alt="First slide" />
@@ -25,6 +26,8 @@ const HomePage = () => {
               <Image src={`${API_URL}/images/salad.png`} className="d-block w-100" alt="Second slide" />
             </Carousel.Item>
           </Carousel>
+          </div>
+          
         </div>
       </div>
 

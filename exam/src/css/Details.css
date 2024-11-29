@@ -6,7 +6,7 @@
     color: #333; /* Valgfritt: Endre tekstfargen */
 }
 
-table {
+.details table {
     width: 100%;
     border-collapse: collapse !important; /* Sikrer at kantene ikke dobles */
     background-color: white; /* Hvit bakgrunn for tabellen */
@@ -14,7 +14,7 @@ table {
 }
 
 /* Style for celler */
-td, th {
+.details td, th {
     border: 2px solid #ccc !important; /* Tydelige rammer rundt hver celle */
     padding: 10px; /* Ekstra padding for lesbarhet */
     text-align: left; /* Venstrejustert tekst */
@@ -23,54 +23,43 @@ td, th {
 }
 
 
-tbody tr:nth-child(odd) {
+.details tbody tr:nth-child(odd) {
     background-color: white; /* Hvit bakgrunn for oddetallsrader */
 }
 
 /* Style for første kolonne (f.eks. labels) */
-details td:first-child {
+.details details td:first-child {
     font-weight: bold;
     color: #333; /* Mørkere tekstfarge for tydelighet */
 }
 
 /* Bakgrunnsfarge for partallsrader (stripede rader) */
-details tr:nth-child(even) {
+.details details tr:nth-child(even) {
     background-color: #f2f2f2 !important; /* Litt lysere grå for å skille rader */
 }
 
 /* Nutrition table container */
-.nutrition-table-container {
+.details .nutrition-table-container {
     background-color: #f9f9f9 !important; /* Lys grå bakgrunn rundt tabellen */
     border-radius: 8px; /* Runde kanter for en moderne stil */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Myk skygge */
 }
 
-div.nutrition-details .nutrition-table-container {
-    margin-top: -20px !important; /* Mer spesifikk selektor for å tvinge endringen */
+.details div.nutrition-details .nutrition-table-container {
+    margin-top: -20px;
 }
-
-/* Modal styles */
-.modal-content {
-    background-color: #fff; /* Hvit bakgrunn for modal */
-    border-radius: 12px; /* Runde kanter */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Myk skygge */
-    padding: 20px; /* Padding inni modalen */
-}
-
 /* Style for nøkkelhullsmerke */
-.keyhole-icon {
+.details .keyhole-icon {
     width: 30px; /* Ikonets bredde */
     height: auto; /* Bevarer proporsjonene */
     margin-left: 10px; /* Avstand mellom navn og ikon */
 }
 
 /* Style for summary i subtile knappestil */
-.summary-subtle {
+.details .summary-subtle {
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
-    margin-bottom: -50px;
-    margin-top: -100px;
     color: #333;
     border-bottom: 1px solid #ccc;
     display: flex;
@@ -80,20 +69,63 @@ div.nutrition-details .nutrition-table-container {
 }
 
 /* Hover-effekt for summary */
-.summary-subtle:hover {
+.details .summary-subtle:hover {
     background-color: #f1f1f1;
 }
 
 /* Roter pilen når "details" er åpnet */
-details[open] .summary-subtle::after {
+.details details[open] .summary-subtle::after {
     transform: rotate(180deg);
 }
 
 /* Pilstil */
-.summary-subtle::after {
+.details .summary-subtle::after {
     content: "▼";
     font-size: 0.9rem;
     color: #666;
     transform: rotate(0deg);
     transition: transform 0.2s ease;
+}
+.details .action-links {
+    display: flex;
+    gap: 12px;
+}
+
+.details .action-links a {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.details .update-link {
+    color: #28a745;
+    background: #fff;
+    margin-top: 10px;
+    text-decoration: none;
+    border: 1px solid #28a745;
+    padding: 4px 8px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.details .update-link:hover {
+    color: white;
+    background-color: #28a745;
+}
+
+.details .delete-link {
+    color: #dc3545;
+    background: #fff;
+    margin-top: 10px;
+    text-decoration: none;
+    border: 1px solid #dc3545;
+    padding: 4px 8px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.details .delete-link:hover {
+    color: white;
+    background-color: #dc3545;
 }
