@@ -22,7 +22,6 @@
     color: #555; /* Tekstfarge */
 }
 
-
 .details tbody tr:nth-child(odd) {
     background-color: white; /* Hvit bakgrunn for oddetallsrader */
 }
@@ -49,7 +48,7 @@
     margin-top: -20px;
 }
 /* Style for nøkkelhullsmerke */
-.details .keyhole-icon {
+.keyhole-icon {
     width: 30px; /* Ikonets bredde */
     height: auto; /* Bevarer proporsjonene */
     margin-left: 10px; /* Avstand mellom navn og ikon */

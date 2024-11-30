@@ -136,7 +136,7 @@ public static class DBInit
                     Salt = 1.9,
                     HasGreenKeyhole = true,
                     ImageUrl = "/images/skinke.jpg"
-                }, 
+                },
                 new Item
                 {
                     Name = "Norvegia 26% Skivet",
@@ -148,7 +148,7 @@ public static class DBInit
                     Salt = 1.2,
                     HasGreenKeyhole = false,
                     ImageUrl = "/images/norvegia_skivet.jpg"},
-                    
+
                 new Item
                 {
                     Name = "Gulrot 400g",
@@ -161,7 +161,7 @@ public static class DBInit
                     HasGreenKeyhole = true,
                     ImageUrl = "/images/gulrot.jpg"
                 },
-            
+
                 new Item
                 {
                     Name = "Pepsi Max 1,5l",

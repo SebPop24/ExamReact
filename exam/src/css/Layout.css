@@ -1,159 +1,119 @@
-/* Layout.css */
-/* Enhanced navbar styles with border and shadow */
-.navbar-custom {
-    background-color: white;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+/* Ultimate Navbar Styling */
+body {
+    font-family: 'Open Sans', sans-serif !important;
 }
 
-/* Rest of the navbar styles remain the same */
-.navbar-custom .navbar-brand {
-    font-family: 'Playfair Display', serif;
-    color: #363636;
-    font-size: 1.9rem;
-    font-weight: 700;
+.navbar {
+    background-color: #2f4f4f; /* Rich dark teal */
+    border-bottom: 2px solid #2f4f4f; /* Highlight green border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px 1.5rem;
+}
+
+/* Brand Styling */
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
     letter-spacing: 1.2px;
-    position: relative;
-    padding: 0.5rem 0;
-    transition: all 0.3s ease;
-    text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.08);
-    display: inline-block;
-}
-
-.navbar-custom .navbar-brand img {
-    height: 40px;
-    vertical-align: middle;
-    margin-bottom: 5px;
-}
-
-/* Adjust the brand container to better align items */
-.navbar-custom .navbar-brand {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+.navbar-brand:hover {
+    color: #4CAF50;
 }
 
-.navbar-custom .navbar-brand:hover {
-    transform: translateY(-1px);
-    color: #2a2a2a;
-}
-
-.navbar-custom .navbar-brand::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #4CAF50;
-    bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: right;
+/* Brand Logo */
+.navbar-brand img {
+    width: 40px;
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
     transition: transform 0.3s ease;
 }
 
-.navbar-custom .navbar-brand:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+/* Logo Animation on Hover */
+.navbar-brand:hover img {
+    transform: scale(1.1);
 }
 
-.navbar-custom {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: #d0f0c0;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar-custom .nav-link {
-    color: #333 !important;
-    margin: 0 0.8rem;
-    padding: 0.5rem 0.2rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.9rem;
-    position: relative;
-    transition: all 0.3s ease;
+/* Link Hover Effect */
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background-color: #2f4f4f;
 }
 
-.navbar-custom .nav-link:hover {
-    color: #000 !important;
-    transform: translateY(-1px);
+/* Active Link */
+.navbar-nav .nav-link.active {
+    color: #ffffff;
+    background-color: #2f4f4f;
 }
 
-.navbar-custom .nav-link::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #4CAF50;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
+/* Toggler Button for Mobile */
+.navbar-toggler {
+    border: none;
+    color: #ffffff;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28208, 240, 192, 0.9%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-.navbar-custom .nav-link:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
+/* Dropdown Styling */
+.dropdown-menu {
+    background-color: #2f4f4f;
+    border: 1px solid #2f4f4f;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 0;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-custom .dropdown-toggle {
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.9rem;
+.dropdown-item {
+    color: #d0f0c0;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(52, 199, 89, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
-.navbar-custom .dropdown-menu {
-    background-color: white;
-    border: 1px solid #f0f0f0;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-top: 0.5rem;
+.dropdown-item:hover {
+    color: #ffffff;
+    background-color: #2f4f4f;
+    padding-left: 25px;
 }
 
-.navbar-custom .dropdown-item {
-    color: #333;
-    padding: 0.7rem 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+.dropdown-item:last-child {
+    border-bottom: none;
 }
 
-.navbar-custom .dropdown-item:hover {
-    background-color: #f8f9fa;
-    color: #000;
-    padding-left: 1.8rem;
+.dropdown-menu.show {
+    animation: dropdownSlide 0.3s ease forwards;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 991.98px) {
-    .navbar-custom .navbar-collapse {
-        padding: 1rem 0;
+@keyframes dropdownSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
     }
-
-    .navbar-custom .nav-link {
-        padding: 0.75rem 0;
-    }
-
-    .navbar-custom .nav-link::before {
-        display: none;
-    }
-
-    .navbar-custom .navbar-brand {
-        font-size: 1.7rem;
-    }
-
-    .navbar-custom .dropdown-menu {
-        border: none;
-        box-shadow: none;
-        padding: 0;
-    }
-
-    .navbar-custom .dropdown-item {
-        padding: 0.75rem 1rem;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-
-  

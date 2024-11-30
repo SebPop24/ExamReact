@@ -3,7 +3,6 @@ import '../css/Footer.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
       <div className="footer">
         <ul className="list-unstyled footer-contact-info">
           <li>
@@ -28,7 +27,6 @@ const Footer: React.FC = () => {
           </li>
         </ul>
       </div>
-    </footer>
   );
 };
 

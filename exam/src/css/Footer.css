@@ -1,14 +1,11 @@
+/* Footer Styling */
 .footer {
     overflow: hidden;
     background-color: #2f4f4f;
     color: #ffffff;
-    padding: 0.75rem 1rem;  /* Reduced from 1.5rem to 0.75rem */
+    padding: 1.5rem 1rem;
     border-top: 2px solid #2f4f4f;
-    font-size: 0.875rem;    /* Reduced from 1rem */
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    box-sizing: border-box;
+    font-size: 1rem;
 }
 
 .footer .container {
@@ -16,17 +13,14 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 1rem;             /* Reduced from 2rem */
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+    gap: 2rem;
 }
 
 .footer-contact-info {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;          /* Reduced from 2rem */
+    gap: 2rem;
     font-size: 0.875rem;
     color: #d0f0c0;
     margin: 0;
@@ -44,7 +38,7 @@
     color: #ffffff;
 }
 
-.footer .footer-bottom-text {
+.footer-bottom-text {
     font-size: 0.75rem;
     color: #d0f0c0;
     white-space: nowrap;

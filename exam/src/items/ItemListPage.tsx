@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
@@ -66,47 +66,48 @@ const handleItemDeleted = async (itemId: number) => {
 };
 
   return (
-<div>
-  <div className="d-flex justify-content-between align-items-center mt-3 mb-4">
-    {/* Toggle Button */}
-    <Button 
-      onClick={toggleTableOrGrid} 
-      className="btn p-0 bg-transparent border-0">
-      <img 
-        src={showTable ? "../images/grid-view.jpg" : "../images/table.png"} 
-        alt="Toggle View" 
-        style={{ width: '35px', height: '35px' }} 
-      />
-    </Button>
+  <Container>
+    <div>
+      <div className="d-flex justify-content-between align-items-center mt-3 mb-4">
+        {/* Toggle Button */}
+        <Button 
+          onClick={toggleTableOrGrid} 
+          className="btn p-0 bg-transparent border-0">
+          <img 
+            src={showTable ? "../images/grid-view.jpg" : "../images/table.png"} 
+            alt="Toggle View" 
+            style={{ width: '35px', height: '35px' }} 
+          />
+        </Button>
 
-    {/* Create New Item Button */}
-    <Button
-  href="/itemcreate"
-  className="btn"
-  style={{
-    backgroundColor: "#05954F",
-    display: "inline-block",
-    padding: "10px 20px",
-    color: "white",
-    textDecoration: "none", // Use camelCase for inline styles
-    borderRadius: "5px", // Use camelCase for inline styles
-    marginTop: "20px", // Use camelCase for inline styles
-    fontWeight: "bold", // Use camelCase for inline styles
-  }}
-  > Create New Item
-  </Button>
+        {/* Create New Item Button */}
+        <Button
+      href="/itemcreate"
+      className="btn"
+      style={{
+        backgroundColor: "#05954F",
+        display: "inline-block",
+        padding: "10px 20px",
+        color: "white",
+        textDecoration: "none", // Use camelCase for inline styles
+        borderRadius: "5px", // Use camelCase for inline styles
+        marginTop: "20px", // Use camelCase for inline styles
+        fontWeight: "bold", // Use camelCase for inline styles
+      }}
+      > Create New Item
+      </Button>
 
-  </div>
+      </div>
 
-  {/* Error Message */}
-  {error && <p style={{ color: 'red' }}>{error}</p>}
+      {/* Error Message */}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
 
-  {/* Display Table or Grid */}
-  {showTable
-    ? <ItemTable items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
-    : <ItemGrid items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />}
-</div>
-
+      {/* Display Table or Grid */}
+      {showTable
+        ? <ItemTable items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
+        : <ItemGrid items={items} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />}
+    </div>
+  </Container>
   );
 };
 

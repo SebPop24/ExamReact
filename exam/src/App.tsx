@@ -14,7 +14,6 @@ import Footer from './shared/Footer';
 const App: React.FC = () => {
   return (
     <Router> {/* This should wrap the whole application */}
-      <Container>
         <NavMenu />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -27,7 +26,6 @@ const App: React.FC = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer /> 
-      </Container>
     </Router>
   );
 };

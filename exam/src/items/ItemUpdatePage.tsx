@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ItemForm from './ItemForm';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
-
 import * as ItemService from './ItemService';
 
 
@@ -47,7 +46,6 @@ const ItemUpdatePage: React.FC = () => {
 
   return (
     <div>
-      <h2>Update Item</h2>
       <ItemForm
         onItemChanged={handleItemUpdated}
         itemId={item.itemId}
