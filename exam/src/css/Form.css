@@ -1,4 +1,11 @@
 /* ItemForm.css */
+
+.error-text {
+  color: red;
+  font-size: 0.9em; /* Adjust font size if necessary */
+  margin-top: 0.25rem; /* Space between the input and the error */
+}
+
 .form-wrapper {
     max-width: 500px;
     margin: 2rem auto;
