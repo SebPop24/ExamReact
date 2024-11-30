@@ -120,9 +120,9 @@ const ItemForm: React.FC<ItemFormProps> = ({
     onItemChanged(item);
   };
 
-  useEffect(() => {
+ /*  useEffect(() => {
     validateForm(); // Validate initial data when the form is loaded
-  }, []);
+  }, []); */
 
   return (
     <div className="form-wrapper">
@@ -135,7 +135,6 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={name}
             onChange={(e) => setName(e.target.value)}
             onBlur={(e) => handleBlur('name', e.target.value)}
-            required
           />
           {errors.name && <p className="error-text">{errors.name}</p>}
         </Form.Group>
@@ -145,7 +144,6 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={food_Group}
             onChange={(e) => setFoodGroup(e.target.value)}
             onBlur={(e) => handleBlur('food_Group', e.target.value)}
-            required
           >
             <option value="">Select Food Group</option>
             <option value="dairy">Dairy</option>
@@ -173,7 +171,6 @@ const ItemForm: React.FC<ItemFormProps> = ({
               value={field.value}
               onChange={(e) => field.setValue(e.target.value)}
               onBlur={(e) => handleBlur(field.label.toLowerCase().replace(/ /g, '_'), e.target.value)}
-              required
             />
             {field.error && <p className="error-text">{field.error}</p>}
           </Form.Group>
@@ -181,12 +178,11 @@ const ItemForm: React.FC<ItemFormProps> = ({
 
         <Form.Group className="form-group">
           <Form.Control
-            type="url"
+            type="text"
             placeholder="Image URL"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             onBlur={(e) => handleBlur('imageUrl', e.target.value)}
-            required
           />
           {errors.imageUrl && <p className="error-text">{errors.imageUrl}</p>}
         </Form.Group>
