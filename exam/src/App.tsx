@@ -19,21 +19,33 @@ import Footer from "./shared/Footer";
 const App: React.FC = () => {
   return (
     <Router>
-      {" "}
-      {/* This should wrap the whole application */}
-      <NavMenu />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/items" element={<ItemListPage />} />
-        <Route path="/itemcreate" element={<ItemCreatePage />} />
-        <Route path="/itemupdate/:itemId" element={<ItemUpdatePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/login" element={<Login />} /> {/* Added Login Route */}
-        <Route path="/register" element={<Register />} />{" "}
-        {/* Added Register Route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-      <Footer />
+      <div
+        style={{
+          flexDirection: "column",
+          display: "flex",
+          minHeight: "100vh",
+          background: "#f1fff6",
+        }}
+      >
+        {/* This should wrap the whole application */}
+        <NavMenu />
+        <div style={{ flex: "1 1 0%" }}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/items" element={<ItemListPage />} />
+            <Route path="/itemcreate" element={<ItemCreatePage />} />
+            <Route path="/itemupdate/:itemId" element={<ItemUpdatePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/login" element={<Login />} />{" "}
+            {/* Added Login Route */}
+            <Route path="/register" element={<Register />} />{" "}
+            {/* Added Register Route */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </div>
     </Router>
   );
 };

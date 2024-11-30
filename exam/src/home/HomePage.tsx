@@ -25,7 +25,7 @@ const HomePage = () => {
               </p>
             </div>
 
-            <div style={{ padding: "5%" }} className="w-50">
+            <div style={{ padding: "5%" }} className="w-50 d-none d-md-block">
               <Carousel>
                 <Carousel.Item>
                   <Image

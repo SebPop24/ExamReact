@@ -64,11 +64,7 @@ const Details: React.FC<DetailsProps> = ({
             {/* Nutritional Information Section */}
             <div className="col-md-7">
               {/* Nutritional Information in a dropdown that starts open */}
-              <details
-                className="nutrition-details"
-                style={{ marginTop: "-20px" }}
-                open
-              >
+              <details className="nutrition-details" open>
                 <summary className="summary-subtle">
                   Næringsinnhold per 100 gram
                 </summary>
