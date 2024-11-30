@@ -1,178 +1,177 @@
 /* Header styling */
 .grid .page-title {
-    font-size: 28px;
-    color: #333;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 /* Wrapper styling for scrollable content */
 .grid #contentWrapper {
-    overflow-x: auto; /* Moved from inline HTML */
+  overflow-x: auto; /* Moved from inline HTML */
 }
 
 /* Grid container styling */
 .grid #itemsContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid */
-    gap: 20px; /* Space between grid items */
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid */
+  gap: 20px; /* Space between grid items */
+  margin-top: 20px;
 }
 
 /* Card styling */
 .grid .card {
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .grid .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .grid .custom-image-size {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.2s;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.2s;
 }
 
 /* Card body styling */
 .grid .card-body {
-    padding: 15px;
-    background-color: #fafafa;
-    width: 100%;
+  padding: 15px;
+  background-color: #fafafa;
+  width: 100%;
 }
 
 .grid .card-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
 }
 
 .grid .card-text {
-    color: #666;
-    font-size: 0.9rem;
-    margin-top: 5px;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 .grid .card a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .grid .card a:hover {
-    color: #4CAF50;
+  color: #4caf50;
 }
 
 /* Keyhole icon styling */
 .grid .keyhole-icon {
-    position: absolute;
-    top: 10px; /* Avstand fra toppen */
-    right: 10px; /* Avstand fra høyre */
-    width: 30px; /* Juster størrelse på ikonet */
-    height: auto; /* Beholder proporsjoner */
-    z-index: 1; /* Sørger for at det vises foran annet innhold */
-  }
-  
+  position: absolute;
+  top: 10px; /* Avstand fra toppen */
+  right: 10px; /* Avstand fra høyre */
+  width: 30px; /* Juster størrelse på ikonet */
+  height: auto; /* Beholder proporsjoner */
+  z-index: 1; /* Sørger for at det vises foran annet innhold */
+}
 
 /* "View More" Button styling */
 .grid #viewMoreContainer {
-    text-align: center; /* Moved from inline HTML */
-    margin-top: 20px; /* Moved from inline HTML */
+  text-align: center; /* Moved from inline HTML */
+  margin-top: 20px; /* Moved from inline HTML */
 }
 
 .grid .btn-secondary {
-    background-color: #007bff; /* Bootstrap primary color */
-    border: none;
-    color: white;
-    padding: 12px 30px; /* Increased padding for better appearance */
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-    cursor: pointer; /* Pointer cursor for better UX */
-    font-size: 1rem; /* Font size */
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none;
+  color: white;
+  padding: 12px 30px; /* Increased padding for better appearance */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer; /* Pointer cursor for better UX */
+  font-size: 1rem; /* Font size */
 }
 
 .grid .btn-secondary:hover {
-    background-color: #0056b3; /* Darker blue for hover effect */
-    transform: scale(1.05); /* Slight scale effect on hover */
+  background-color: #0056b3; /* Darker blue for hover effect */
+  transform: scale(1.05); /* Slight scale effect on hover */
 }
 
 /* Modal styling */
 .grid .modal {
-    display: none; /* Hidden by default */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: hidden; /* Disable all scroll */
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better focus */
-    padding-top: 150px; /* Space from the top */
+  display: none; /* Hidden by default */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Disable all scroll */
+  background-color: rgba(0, 0, 0, 0.7); /* Darker background for better focus */
+  padding-top: 150px; /* Space from the top */
 }
 
 .grid .modal-content {
-    background-color: #fff;
-    margin: auto; /* Center the modal */
-    padding: 30px; /* Increased padding for a spacious feel */
-    border: none; /* No border */
-    width: 80%; /* Wider width for larger screens */
-    max-width: 800px; /* Increased maximum width for better manageability */
-    height: 620px; /* Increased height for all modals */
-    border-radius: 12px; /* Rounded corners for a modern look */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
-    overflow-y: auto; /* Enable vertical scrolling if content is too tall */
-    overflow-x: hidden; /* Disable horizontal scrolling */
+  background-color: #fff;
+  margin: auto; /* Center the modal */
+  padding: 30px; /* Increased padding for a spacious feel */
+  border: none; /* No border */
+  width: 80%; /* Wider width for larger screens */
+  max-width: 800px; /* Increased maximum width for better manageability */
+  height: 620px; /* Increased height for all modals */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  overflow-y: auto; /* Enable vertical scrolling if content is too tall */
+  overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 /* Product image styling */
 .grid .product-image {
-    max-width: 100%;
-    max-height: 300px; /* Adjust this value to control the image height */
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+  max-width: 100%;
+  max-height: 300px; /* Adjust this value to control the image height */
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 /* Keyhole icon */
 .grid .keyhole-icon {
-    width: 30px;
-    height: auto;
+  width: 30px;
+  height: auto;
 }
 
 /* Summary subtle style */
 .grid .summary-subtle {
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin-bottom: 10px;
-    padding: 10px;
-    color: #333;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .grid .custom-image-size {
-    height: 200px; /* Set the height you want */
-    width: 100%; /* Makes sure the width adjusts to the container */
-    object-fit: contain; /* Ensures the entire image is visible */
+  height: 200px; /* Set the height you want */
+  width: 100%; /* Makes sure the width adjusts to the container */
+  object-fit: contain; /* Ensures the entire image is visible */
 }

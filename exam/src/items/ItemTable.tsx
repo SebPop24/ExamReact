@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Table, Modal } from 'react-bootstrap';
-import { Item } from '../types/item';
-import { Link } from 'react-router-dom';
-import Details from './ItemModal'; // Import your updated Details component
-import '../css/Table.css';
+import React, { useState } from "react";
+import { Table, Modal } from "react-bootstrap";
+import { Item } from "../types/item";
+import { Link } from "react-router-dom";
+import Details from "./ItemModal"; // Import your updated Details component
+import "../css/Table.css";
 
 interface ItemTableProps {
   items: Item[];
@@ -12,7 +12,11 @@ interface ItemTableProps {
   isAuthenticated?: boolean;
 }
 
-const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted}) => {
+const ItemTable: React.FC<ItemTableProps> = ({
+  items,
+  apiUrl,
+  onItemDeleted,
+}) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
@@ -29,7 +33,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted}) =>
   return (
     <>
       <div className="table">
-        <Table striped bordered style={{ overflowY: 'scroll' }}>
+        <Table striped bordered style={{ overflowY: "scroll" }}>
           <thead>
             <tr>
               <th>Name</th>
@@ -46,7 +50,11 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted}) =>
           </thead>
           <tbody>
             {items.map((item) => (
-              <tr key={item.itemId} onClick={() => handleRowClick(item)} className="open-modal">
+              <tr
+                key={item.itemId}
+                onClick={() => handleRowClick(item)}
+                className="open-modal"
+              >
                 <td style={{ fontWeight: 700 }}>{item.name}</td>
                 <td>{item.food_Group}</td>
                 <td>{item.energi_Kj} kj</td>
@@ -58,7 +66,12 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted}) =>
                   <img
                     src={`${item.imageUrl}`}
                     alt={item.name}
-                    style={{ maxWidth: '50px', maxHeight: '50px', display: 'block', margin: '0 auto' }}
+                    style={{
+                      maxWidth: "50px",
+                      maxHeight: "50px",
+                      display: "block",
+                      margin: "0 auto",
+                    }}
                   />
                 </td>
                 <td>
@@ -66,17 +79,39 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted}) =>
                     <img
                       src="/images/green_keyhole.jpg"
                       alt="Keyhole"
-                      style={{ maxWidth: '25px', maxHeight: '25px', display: 'block', margin: '0 auto' }}
+                      style={{
+                        maxWidth: "25px",
+                        maxHeight: "25px",
+                        display: "block",
+                        margin: "0 auto",
+                      }}
                     />
                   )}
                 </td>
-                
-                  <td>
-                    <div style={{'display': 'flex'}}>
-                      <Link to={`/itemupdate/${item.itemId}`} className="update-link"> Update</Link>
-                      <Link style={{marginLeft: '5px'}} to="#"onClick={(e) => { e.stopPropagation(); onItemDeleted(item.itemId);}} className="delete-link"> Delete </Link>
-                    </div>
-                  </td>
+
+                <td>
+                  <div style={{ display: "flex" }}>
+                    <Link
+                      to={`/itemupdate/${item.itemId}`}
+                      className="update-link"
+                    >
+                      {" "}
+                      Update
+                    </Link>
+                    <Link
+                      style={{ marginLeft: "5px" }}
+                      to="#"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onItemDeleted(item.itemId);
+                      }}
+                      className="delete-link"
+                    >
+                      {" "}
+                      Delete{" "}
+                    </Link>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>

@@ -1,85 +1,90 @@
+.tablebackground {
+  background-color: #f1fff6; /* Lys grønn bakgrunn */
+}
+
 .table table {
-    width: 100%;
-    border-collapse: collapse; /* Sikrer at celler deler kantlinjer */
-    background-color: white; /* Bakgrunnsfarge for tabellen */
-    border: 1px solid #ddd; /* Legger til en lys grå ramme rundt hele tabellen */
+  width: 100%;
+  border-collapse: collapse; /* Sikrer at celler deler kantlinjer */
+  background-color: white; /* Bakgrunnsfarge for tabellen */
+  border: 1px solid #ddd; /* Legger til en lys grå ramme rundt hele tabellen */
 }
 
 /* Header-styling */
 .table thead th {
-    background-color: #05954F; /* Velg ønsket bakgrunnsfarge for headeren */
-    color: white; /* Tekstfarge */
-    font-weight: bold; /* Fet skrift */
-    border: 1px solid #ddd; /* Legger til ramme mellom headercellene */
-    text-align: center; /* Justerer teksten midtstilt */
+  background-color: #05954f; /* Velg ønsket bakgrunnsfarge for headeren */
+  color: white; /* Tekstfarge */
+  font-weight: bold; /* Fet skrift */
+  border: 1px solid #ddd; /* Legger til ramme mellom headercellene */
+  text-align: center; /* Justerer teksten midtstilt */
 }
 
 /* Cellestil (vanlig innhold) */
-.table td, th {
-    padding: 10px; /* Gjør cellene mer lesbare */
-    border: 1px solid #ddd; /* Gir hver celle en lys grå ramme */
-    text-align: left; /* Venstrejustering for tekst */
+.table td,
+th {
+  padding: 10px; /* Gjør cellene mer lesbare */
+  border: 1px solid #ddd; /* Gir hver celle en lys grå ramme */
+  text-align: left; /* Venstrejustering for tekst */
 }
 
 /* Stripede rader for bedre lesbarhet */
 .table tbody tr:nth-child(even) {
-    background-color: #f9f9f9; /* Lys grå for partallsrader */
+  background-color: #f9f9f9; /* Lys grå for partallsrader */
 }
 
 .table tbody tr:nth-child(odd) {
-    background-color: white; /* Hvit for oddetallsrader */
+  background-color: white; /* Hvit for oddetallsrader */
 }
 
 .table .action-links {
-    display: flex;
-    gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .table .action-links a {
-    font-weight: bold;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 .table .update-link {
-    color: #28a745;
-    text-decoration: none;
-    border: 1px solid #28a745;
-    padding: 4px 8px;
-    border-radius: 5px;
-    display: inline-block;
+  color: #28a745;
+  text-decoration: none;
+  border: 1px solid #28a745;
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .table .update-link:hover {
-    color: white;
-    background-color: #28a745;
+  color: white;
+  background-color: #28a745;
 }
 
 .table .delete-link {
-    color: #dc3545;
-    text-decoration: none;
-    border: 1px solid #dc3545;
-    padding: 4px 8px;
-    border-radius: 5px;
-    display: inline-block;
+  color: #dc3545;
+  text-decoration: none;
+  border: 1px solid #dc3545;
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .table .delete-link:hover {
-    color: white;
-    background-color: #dc3545;
+  color: white;
+  background-color: #dc3545;
 }
 
 .table .keyhole-icon {
-    width: 25px;
-    height: auto;
-    display: inline-block;
-    margin: 0 auto;
+  width: 25px;
+  height: auto;
+  display: inline-block;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-    .table .modal-content {
-        width: 500px; /* Fixed width on medium screens */
-        height: auto; /* Allow height to adapt */
-    }
+  .table .modal-content {
+    width: 500px; /* Fixed width on medium screens */
+    height: auto; /* Allow height to adapt */
+  }
 }

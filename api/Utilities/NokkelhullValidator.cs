@@ -1,11 +1,13 @@
 using System;
+using Exam.DTOs;
 using Exam.Models;
 
-namespace Exam.Utilities{
-    
-       public static class NokkelhullValidator
+namespace Exam.Utilities
+{
+
+    public static class NokkelhullValidator
     {
-        public static bool IsEligibleForNokkelhull(Item item)
+        public static bool IsEligibleForNokkelhull(ItemDto item)
         {
             // Define thresholds based on the Nøkkelhullet regulations
             return item.Food_Group.ToLower() switch
@@ -24,4 +26,3 @@ namespace Exam.Utilities{
 
 }
 
- 

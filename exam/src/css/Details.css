@@ -1,130 +1,131 @@
 /* Generelle tabellinnstillinger */
 
 .item-header {
-    font-weight: bold; /* Gjør teksten fet */
-    font-size: 1.8rem; /* Juster fontstørrelse hvis nødvendig */
-    color: #333; /* Valgfritt: Endre tekstfargen */
+  font-weight: bold; /* Gjør teksten fet */
+  font-size: 1.8rem; /* Juster fontstørrelse hvis nødvendig */
+  color: #333; /* Valgfritt: Endre tekstfargen */
 }
 
 .details table {
-    width: 100%;
-    border-collapse: collapse !important; /* Sikrer at kantene ikke dobles */
-    background-color: white; /* Hvit bakgrunn for tabellen */
-    border: 2px solid #ccc !important; /* Tydelig ramme rundt hele tabellen */
+  width: 100%;
+  border-collapse: collapse !important; /* Sikrer at kantene ikke dobles */
+  background-color: white; /* Hvit bakgrunn for tabellen */
+  border: 2px solid #ccc !important; /* Tydelig ramme rundt hele tabellen */
 }
 
 /* Style for celler */
-.details td, th {
-    border: 2px solid #ccc !important; /* Tydelige rammer rundt hver celle */
-    padding: 10px; /* Ekstra padding for lesbarhet */
-    text-align: left; /* Venstrejustert tekst */
-    font-size: 1rem; /* Standard skriftstørrelse */
-    color: #555; /* Tekstfarge */
+.details td,
+th {
+  border: 2px solid #ccc !important; /* Tydelige rammer rundt hver celle */
+  padding: 10px; /* Ekstra padding for lesbarhet */
+  text-align: left; /* Venstrejustert tekst */
+  font-size: 1rem; /* Standard skriftstørrelse */
+  color: #555; /* Tekstfarge */
 }
 
 .details tbody tr:nth-child(odd) {
-    background-color: white; /* Hvit bakgrunn for oddetallsrader */
+  background-color: white; /* Hvit bakgrunn for oddetallsrader */
 }
 
 /* Style for første kolonne (f.eks. labels) */
 .details details td:first-child {
-    font-weight: bold;
-    color: #333; /* Mørkere tekstfarge for tydelighet */
+  font-weight: bold;
+  color: #333; /* Mørkere tekstfarge for tydelighet */
 }
 
 /* Bakgrunnsfarge for partallsrader (stripede rader) */
 .details details tr:nth-child(even) {
-    background-color: #f2f2f2 !important; /* Litt lysere grå for å skille rader */
+  background-color: #f2f2f2 !important; /* Litt lysere grå for å skille rader */
 }
 
 /* Nutrition table container */
 .details .nutrition-table-container {
-    background-color: #f9f9f9 !important; /* Lys grå bakgrunn rundt tabellen */
-    border-radius: 8px; /* Runde kanter for en moderne stil */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Myk skygge */
+  background-color: #f9f9f9 !important; /* Lys grå bakgrunn rundt tabellen */
+  border-radius: 8px; /* Runde kanter for en moderne stil */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Myk skygge */
 }
 
 .details div.nutrition-details .nutrition-table-container {
-    margin-top: -20px;
+  margin-top: -20px;
 }
 /* Style for nøkkelhullsmerke */
 .keyhole-icon {
-    width: 30px; /* Ikonets bredde */
-    height: auto; /* Bevarer proporsjonene */
-    margin-left: 10px; /* Avstand mellom navn og ikon */
+  width: 30px; /* Ikonets bredde */
+  height: auto; /* Bevarer proporsjonene */
+  margin-left: 10px; /* Avstand mellom navn og ikon */
 }
 
 /* Style for summary i subtile knappestil */
 .details .summary-subtle {
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    color: #333;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.2s;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
 }
 
 /* Hover-effekt for summary */
 .details .summary-subtle:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 /* Roter pilen når "details" er åpnet */
 .details details[open] .summary-subtle::after {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Pilstil */
 .details .summary-subtle::after {
-    content: "▼";
-    font-size: 0.9rem;
-    color: #666;
-    transform: rotate(0deg);
-    transition: transform 0.2s ease;
+  content: "▼";
+  font-size: 0.9rem;
+  color: #666;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
 }
 .details .action-links {
-    display: flex;
-    gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .details .action-links a {
-    font-weight: bold;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 .details .update-link {
-    color: #28a745;
-    background: #fff;
-    margin-top: 10px;
-    text-decoration: none;
-    border: 1px solid #28a745;
-    padding: 4px 8px;
-    border-radius: 5px;
-    display: inline-block;
+  color: #28a745;
+  background: #fff;
+  margin-top: 10px;
+  text-decoration: none;
+  border: 1px solid #28a745;
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .details .update-link:hover {
-    color: white;
-    background-color: #28a745;
+  color: white;
+  background-color: #28a745;
 }
 
 .details .delete-link {
-    color: #dc3545;
-    background: #fff;
-    margin-top: 10px;
-    text-decoration: none;
-    border: 1px solid #dc3545;
-    padding: 4px 8px;
-    border-radius: 5px;
-    display: inline-block;
+  color: #dc3545;
+  background: #fff;
+  margin-top: 10px;
+  text-decoration: none;
+  border: 1px solid #dc3545;
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 .details .delete-link:hover {
-    color: white;
-    background-color: #dc3545;
+  color: white;
+  background-color: #dc3545;
 }

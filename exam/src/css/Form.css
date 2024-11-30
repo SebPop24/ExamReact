@@ -7,89 +7,88 @@
 }
 
 .form-wrapper {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-title {
-    color: #2B7A4B;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: 600;
-  }
-  
-  .custom-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-  
-  .form-control:focus {
-    border-color: #2B7A4B;
-    box-shadow: 0 0 0 0.2rem rgba(43, 122, 75, 0.25);
-  }
-  
-  .form-select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-  
-  .button-group {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  
-  .btn {
-    padding: 0.5rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 500;
-  }
-  
-  .btn-success {
-    background-color: #2B7A4B;
-    border-color: #2B7A4B;
-  }
-  
-  .btn-success:hover {
-    background-color: #236A3F;
-    border-color: #236A3F;
-  }
-  
-  .btn-outline-success {
-    color: #2B7A4B;
-    border-color: #2B7A4B;
-  }
-  
-  .btn-outline-success:hover {
-    background-color: #2B7A4B;
-    color: white;
-  }
-  
-  /* Remove default number input arrows */
-  input[type=number]::-webkit-inner-spin-button, 
-  input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
-  }
-  
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  color: #2b7a4b;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #2b7a4b;
+  box-shadow: 0 0 0 0.2rem rgba(43, 122, 75, 0.25);
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.btn-success {
+  background-color: #2b7a4b;
+  border-color: #2b7a4b;
+}
+
+.btn-success:hover {
+  background-color: #236a3f;
+  border-color: #236a3f;
+}
+
+.btn-outline-success {
+  color: #2b7a4b;
+  border-color: #2b7a4b;
+}
+
+.btn-outline-success:hover {
+  background-color: #2b7a4b;
+  color: white;
+}
+
+/* Remove default number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

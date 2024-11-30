@@ -1,6 +1,6 @@
-import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import '../css/Details.css';
+import React from "react";
+import { Modal, Button } from "react-bootstrap";
+import "../css/Details.css";
 
 interface DetailsProps {
   showModal: boolean; // Added this prop to control the visibility of the modal
@@ -39,24 +39,39 @@ const Details: React.FC<DetailsProps> = ({
     <Modal size={"lg"} show={showModal} onHide={handleClose}>
       <Modal.Header style={{ fontWeight: "700" }} closeButton>
         <Modal.Title>
-          <strong>{name}</strong> {hasGreenKeyhole && (
-            <img src="/images/green_keyhole.jpg" alt="Nøkkelhullsmerke" className="keyhole-icon" />
+          <strong>{name}</strong>{" "}
+          {hasGreenKeyhole && (
+            <img
+              src="/images/green_keyhole.jpg"
+              alt="Nøkkelhullsmerke"
+              className="keyhole-icon"
+            />
           )}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div className='details'>
+        <div className="details">
           <div className="row gx-5 my-3">
             {/* Image Section */}
             <div className="col-md-5 position-relative">
-              <img alt={name} src={imageUrl} className="product-image img-fluid" />
+              <img
+                alt={name}
+                src={imageUrl}
+                className="product-image img-fluid"
+              />
             </div>
 
             {/* Nutritional Information Section */}
             <div className="col-md-7">
               {/* Nutritional Information in a dropdown that starts open */}
-              <details className="nutrition-details" style={{ marginTop: '-20px' }} open>
-              <summary className="summary-subtle">Næringsinnhold per 100 gram</summary>
+              <details
+                className="nutrition-details"
+                style={{ marginTop: "-20px" }}
+                open
+              >
+                <summary className="summary-subtle">
+                  Næringsinnhold per 100 gram
+                </summary>
                 <div className="nutrition-table-container">
                   <table>
                     <tbody>
@@ -88,12 +103,18 @@ const Details: React.FC<DetailsProps> = ({
                   </table>
                 </div>
                 <div className="static-actions mb-3">
-                    <button className="update-link" onClick={() => onUpdate(itemId)}>
-                      Update
-                    </button>
-                    <button className="delete-link" onClick={() => onDelete(itemId)}>
-                      Delete
-                    </button>
+                  <button
+                    className="update-link"
+                    onClick={() => onUpdate(itemId)}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="delete-link"
+                    onClick={() => onDelete(itemId)}
+                  >
+                    Delete
+                  </button>
                 </div>
               </details>
             </div>

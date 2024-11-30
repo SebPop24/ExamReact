@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Http;
-using Exam.Attributes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -50,7 +49,5 @@ namespace Exam.DTOs
         // Validation for ImageUrl
         [Display(Name = "Image URL")]
         public string ImageUrl { get; set; } = string.Empty;
-
-        public bool HasGreenKeyhole { get; set; }
     }
 }

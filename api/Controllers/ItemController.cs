@@ -4,6 +4,7 @@ using Exam.DAL;
 using Exam.Models;
 using Exam.ViewModels;
 using Exam.DTOs;
+using Exam.Utilities;
 //using Exam.Attributes;
 //using Exam.Utilities;
 namespace Exam.Controllers;
@@ -31,7 +32,7 @@ public class ItemAPIController : Controller
             _logger.LogError("[ItemAPIController] Item list not found while executing _itemRepository.GetAll()");
             return NotFound("Item list not found");
         }
-        var itemDtos = items.Select(item => new ItemDto
+        var itemDtos = items.Select(item => new Item
         {
             ItemId = item.ItemId,
             Name = item.Name,
@@ -43,7 +44,7 @@ public class ItemAPIController : Controller
             Salt = item.Salt,
             ImageUrl = item.ImageUrl,
             HasGreenKeyhole = item.HasGreenKeyhole
-        });        
+        });
         return Ok(itemDtos);
     }
 
@@ -66,8 +67,8 @@ public class ItemAPIController : Controller
             Karbohydrat = itemDto.Karbohydrat,
             Salt = itemDto.Salt,
             ImageUrl = itemDto.ImageUrl,
-            HasGreenKeyhole = itemDto.HasGreenKeyhole
-        };        
+            HasGreenKeyhole = NokkelhullValidator.IsEligibleForNokkelhull(itemDto)
+        };
         bool returnOk = await _itemRepository.Create(newItem);
         if (returnOk)
             return CreatedAtAction(nameof(ItemList), new { id = newItem.ItemId }, newItem);
@@ -76,7 +77,7 @@ public class ItemAPIController : Controller
         return StatusCode(500, "Internal server error");
     }
 
-[HttpGet("{id}")]
+    [HttpGet("{id}")]
     public async Task<IActionResult> GetItem(int id)
     {
         var item = await _itemRepository.GetItemById(id);
@@ -89,40 +90,40 @@ public class ItemAPIController : Controller
     }
 
     [HttpPut("update/{id}")]
-public async Task<IActionResult> Update(int id, [FromBody] ItemDto itemDto)
-{
-    if (itemDto == null)
+    public async Task<IActionResult> Update(int id, [FromBody] ItemDto itemDto)
     {
-        return BadRequest("Item data cannot be null");
-    }
-    // Find the item in the database
-    var existingItem = await _itemRepository.GetItemById(id);
-    if (existingItem == null)
-    {
-        return NotFound("Item not found");
-    }
-    // Update the item properties
-    existingItem.Name = itemDto.Name;
-    existingItem.Food_Group = itemDto.Food_Group;
-    existingItem.Energi_Kj = itemDto.Energi_Kj;
-    existingItem.Fett = itemDto.Fett;
-    existingItem.Protein = itemDto.Protein;
-    existingItem.Karbohydrat = itemDto.Karbohydrat;
-    existingItem.Salt = itemDto.Salt;
-    existingItem.ImageUrl = itemDto.ImageUrl;
-    existingItem.HasGreenKeyhole = itemDto.HasGreenKeyhole;
-   
-    bool updateSuccessful = await _itemRepository.Update(existingItem);
-    if (updateSuccessful)
-    {
-        return Ok(existingItem); // Return the updated item
-    }           
+        if (itemDto == null)
+        {
+            return BadRequest("Item data cannot be null");
+        }
+        // Find the item in the database
+        var existingItem = await _itemRepository.GetItemById(id);
+        if (existingItem == null)
+        {
+            return NotFound("Item not found");
+        }
+        // Update the item properties
+        existingItem.Name = itemDto.Name;
+        existingItem.Food_Group = itemDto.Food_Group;
+        existingItem.Energi_Kj = itemDto.Energi_Kj;
+        existingItem.Fett = itemDto.Fett;
+        existingItem.Protein = itemDto.Protein;
+        existingItem.Karbohydrat = itemDto.Karbohydrat;
+        existingItem.Salt = itemDto.Salt;
+        existingItem.ImageUrl = itemDto.ImageUrl;
+        existingItem.HasGreenKeyhole = NokkelhullValidator.IsEligibleForNokkelhull(itemDto);
 
-    _logger.LogWarning("[ItemAPIController] Item update failed {@item}", existingItem);
-    return StatusCode(500, "Internal server error");
-}
+        bool updateSuccessful = await _itemRepository.Update(existingItem);
+        if (updateSuccessful)
+        {
+            return Ok(existingItem); // Return the updated item
+        }
 
- [HttpDelete("delete/{id}")]
+        _logger.LogWarning("[ItemAPIController] Item update failed {@item}", existingItem);
+        return StatusCode(500, "Internal server error");
+    }
+
+    [HttpDelete("delete/{id}")]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
         bool returnOk = await _itemRepository.Delete(id);
@@ -132,7 +133,7 @@ public async Task<IActionResult> Update(int id, [FromBody] ItemDto itemDto)
             return BadRequest("Item deletion failed");
         }
         return NoContent(); // 200 Ok is commonly used when the server returns a response body with additional information about the result of the request. For a DELETE operation, there's generally no need to return additional data, making 204 NoContent a better fit.
-    }   
+    }
 
 
 }

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { Item } from '../types/item';
-import Details from './ItemModal'; // Import your updated Details component
-import '../css/Grid.css';
+import React, { useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import { Item } from "../types/item";
+import Details from "./ItemModal"; // Import your updated Details component
+import "../css/Grid.css";
 
 interface ItemGridProps {
   items: Item[];
@@ -10,7 +10,11 @@ interface ItemGridProps {
   onItemDeleted: (itemId: number) => void;
 }
 
-const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => {
+const ItemGrid: React.FC<ItemGridProps> = ({
+  items,
+  apiUrl,
+  onItemDeleted,
+}) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
@@ -38,7 +42,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => 
               <div className="card">
                 <a
                   onClick={() => handleCardClick(item)}
-                  style={{ position: 'relative', cursor: 'pointer' }}
+                  style={{ position: "relative", cursor: "pointer" }}
                   className="w-100"
                 >
                   <img
@@ -48,7 +52,9 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => 
                   />
                   <div className="card-body">
                     <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">{energiToKcal(item.energi_Kj)} kcal</p>
+                    <p className="card-text">
+                      {energiToKcal(item.energi_Kj)} kcal
+                    </p>
                   </div>
                   {item.hasGreenKeyhole && (
                     <img

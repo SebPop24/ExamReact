@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import ItemForm from './ItemForm';
-import { Item } from '../types/item';
-import API_URL from '../apiConfig';
-import * as ItemService from './ItemService';
-
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import ItemForm from "./ItemForm";
+import { Item } from "../types/item";
+import API_URL from "../apiConfig";
+import * as ItemService from "./ItemService";
 
 const ItemUpdatePage: React.FC = () => {
   const { itemId } = useParams<{ itemId: string }>(); // Get itemId from the URL
@@ -19,8 +18,8 @@ const ItemUpdatePage: React.FC = () => {
         const data = await ItemService.fetchItemById(itemId);
         setItem(data);
       } catch (error) {
-        setError('Failed to fetch item');
-        console.error('There was a problem with the fetch operation:', error);
+        setError("Failed to fetch item");
+        console.error("There was a problem with the fetch operation:", error);
       } finally {
         setLoading(false);
       }
@@ -30,15 +29,14 @@ const ItemUpdatePage: React.FC = () => {
   }, [itemId]);
 
   const handleItemUpdated = async (item: Item) => {
-
     try {
       const data = await ItemService.updateItem(item.itemId, item);
-      console.log('Item updated successfully:', data);
-      navigate('/items'); // Navigate back after successful creation
+      console.log("Item updated successfully:", data);
+      navigate("/items"); // Navigate back after successful creation
     } catch (error) {
-      console.error('There was a problem with the fetch operation:', error);
+      console.error("There was a problem with the fetch operation:", error);
     }
-  }
+  };
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
@@ -53,7 +51,7 @@ const ItemUpdatePage: React.FC = () => {
         initialData={item}
       />
     </div>
-  );    
+  );
 };
 
 export default ItemUpdatePage;
