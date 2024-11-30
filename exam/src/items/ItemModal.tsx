@@ -37,10 +37,12 @@ const Details: React.FC<DetailsProps> = ({
 }) => {
   return (
     <Modal size={"lg"} show={showModal} onHide={handleClose}>
-      <Modal.Header style={{ "fontWeight": "700"}} closeButton>
-        <Modal.Title>{name} {hasGreenKeyhole && (
-              <img src="/images/green_keyhole.jpg" alt="Nøkkelhullsmerke" className="keyhole-icon"  />
-            )}</Modal.Title>
+      <Modal.Header style={{ fontWeight: "700" }} closeButton>
+        <Modal.Title>
+          <strong>{name}</strong> {hasGreenKeyhole && (
+            <img src="/images/green_keyhole.jpg" alt="Nøkkelhullsmerke" className="keyhole-icon" />
+          )}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className='details'>
