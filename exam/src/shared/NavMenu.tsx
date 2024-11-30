@@ -15,7 +15,7 @@ const NavMenu: React.FC = () => {
                 alt="Logo"
                 style={{ marginBottom: '5px' }}
               />
-              My Nutrition Tracker
+            <div className="highlight-text">My Nutrition Tracker</div>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -23,7 +23,7 @@ const NavMenu: React.FC = () => {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/items">Items</Nav.Link>
                 <Nav.Link href="/about">About</Nav.Link>
-                <NavDropdown title="Account" id="basic-nav-dropdown" align="end">
+                <NavDropdown title="Account" id="basic-nav-dropdown" align="end" className='dropmenu'>
                   {/* Assuming you're handling login/logout here */}
                   <NavDropdown.Item href="/register">Register</NavDropdown.Item>
                   <NavDropdown.Item href="/login">Log In</NavDropdown.Item>

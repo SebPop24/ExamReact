@@ -1,9 +1,9 @@
 /* Ultimate Navbar Styling */
 body {
     font-family: 'Open Sans', sans-serif !important;
-}
-.basic-nav-dropdown{
-    color: white;
+}  
+.highlight-text{
+    font-size: 1.2rem;
 }
 
 .navbar {
@@ -76,19 +76,18 @@ body {
 
 /* Dropdown Styling */
 .dropdown-menu {
-    background-color: #2f4f4f;
-    border: 1px solid #2f4f4f;
+    background-color: white;
+    border: 1px solid white;
     border-radius: 8px;
     margin-top: 10px;
     padding: 0;
-    min-width: 220px;
+    min-width: 170px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-item {
-    color: #d0f0c0;
+    color: black;
     padding: 12px 20px;
-    border-bottom: 1px solid rgba(52, 199, 89, 0.2);
     transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
     display: flex;
     align-items: center;
@@ -97,8 +96,8 @@ body {
 }
 
 .dropdown-item:hover {
-    color: #ffffff;
-    background-color: #2f4f4f;
+    color: black;
+    background-color: lightgray;
     padding-left: 25px;
 }
 
