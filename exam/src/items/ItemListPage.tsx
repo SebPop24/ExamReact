@@ -83,7 +83,7 @@ const ItemListPage: React.FC = () => {
             >
               <img
                 src={
-                  showTable ? "../images/grid-view.jpg" : "../images/table.png"
+                  showTable ? "../assets/images/grid-view.jpg" : "../assets/images/table.png"
                 }
                 alt="Toggle View"
                 style={{ width: "35px", height: "35px" }}

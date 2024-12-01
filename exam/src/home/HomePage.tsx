@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
 import API_URL from "../apiConfig";
-import "../css/Index.css";
+import "../assets/css/Index.css";
 
 const HomePage = () => {
   return (

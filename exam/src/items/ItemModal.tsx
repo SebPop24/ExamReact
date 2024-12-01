@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import "../css/Details.css";
+import "../assets/css/Details.css";
 
 interface DetailsProps {
   showModal: boolean; // Added this prop to control the visibility of the modal

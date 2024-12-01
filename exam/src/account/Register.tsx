@@ -1,4 +1,4 @@
-import "../css/Register.css";
+import "../assets/css/Register.css";
 
 const Register = () => {
   return (

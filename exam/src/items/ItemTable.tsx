@@ -3,7 +3,7 @@ import { Table, Modal } from "react-bootstrap";
 import { Item } from "../types/item";
 import { Link } from "react-router-dom";
 import Details from "./ItemModal"; // Import your updated Details component
-import "../css/Table.css";
+import "../assets/css/Table.css";
 
 interface ItemTableProps {
   items: Item[];

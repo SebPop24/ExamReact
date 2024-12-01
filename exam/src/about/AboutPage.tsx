@@ -1,5 +1,5 @@
 import React from "react"; // Importing React for creating the functional component.
-import "../css/About.css"; // Importing the CSS
+import "../assets/css/About.css"; // Importing the CSS
 
 const AboutPage: React.FC = () => {
   // Defining a functional component with TypeScript type for props (React.FC).

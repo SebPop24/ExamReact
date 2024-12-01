@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
-import "../css/Layout.css";
+import "../assets/css/Layout.css";
 
 const NavMenu: React.FC = () => {
   return (

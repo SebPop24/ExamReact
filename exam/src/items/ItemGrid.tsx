@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Item } from "../types/item";
 import Details from "./ItemModal"; // Import your updated Details component
-import "../css/Grid.css";
+import "../assets/css/Grid.css";
 
 interface ItemGridProps {
   items: Item[];

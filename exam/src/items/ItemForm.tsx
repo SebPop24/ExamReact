@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { Item } from "../types/item";
-import "../css/Form.css";
+import "../assets/css/Form.css";
 
 interface ItemFormProps {
   onItemChanged: (newItem: Item) => void;

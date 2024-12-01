@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Layout.css";
+import "../assets/css/Layout.css";
 
 const Footer: React.FC = () => {
   return (
