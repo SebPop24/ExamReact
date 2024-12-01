@@ -5,6 +5,7 @@ namespace Exam.DAL;
 
 public static class DBInit
 {
+    //Seeds the database with sample Item data after resetting the schema, ensuring test or initial data availability.
     public static void Seed(IApplicationBuilder app)
     {
         using var serviceScope = app.ApplicationServices.CreateScope();

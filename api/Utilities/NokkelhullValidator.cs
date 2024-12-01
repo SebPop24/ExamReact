@@ -4,7 +4,7 @@ using Exam.Models;
 
 namespace Exam.Utilities
 {
-
+    //Validates ItemDto for Nøkkelhullet eligibility based on food group and thresholds.
     public static class NokkelhullValidator
     {
         public static bool IsEligibleForNokkelhull(ItemDto item)

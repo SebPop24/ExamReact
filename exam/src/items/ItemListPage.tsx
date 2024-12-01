@@ -7,17 +7,19 @@ import API_URL from "../apiConfig";
 import * as ItemService from "./ItemService";
 
 const ItemListPage: React.FC = () => {
-  const [items, setItems] = useState<Item[]>([]); // State for storing items with Item type
-  const [loading, setLoading] = useState<boolean>(false); // State for loading indicator
-  const [error, setError] = useState<string | null>(null); // State for storing error messages
-  const [showTable, setShowTable] = useState<boolean>(true); // State to toggle between table and grid view
+  //Initializes state for `items` (list of items), `loading` (loading status), `error` (error messages), and `showTable` (toggle for table view).
+  const [items, setItems] = useState<Item[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showTable, setShowTable] = useState<boolean>(true);
 
   const toggleTableOrGrid = () =>
     setShowTable((prevShowTable) => !prevShowTable);
 
+  // Fetches items, updates state, handles errors, and logs results.
   const fetchItems = async () => {
-    setLoading(true); // Set loading to true when starting the fetch
-    setError(null); // Clear any previous errors
+    setLoading(true);
+    setError(null);
 
     try {
       const data = await ItemService.fetchItems();
@@ -29,7 +31,7 @@ const ItemListPage: React.FC = () => {
       );
       setError("Failed to fetch items.");
     } finally {
-      setLoading(false); // Set loading to false once the fetch is complete
+      setLoading(false);
     }
   };
 
@@ -52,7 +54,7 @@ const ItemListPage: React.FC = () => {
     );
     localStorage.setItem("itemViewMode", showTable ? "table" : "grid");
   }, [showTable]);
-
+  // Deletes an item after user confirmation, updates the item list, handles errors, and logs the result.
   const handleItemDeleted = async (itemId: number) => {
     const confirmDelete = window.confirm(
       `Are you sure you want to delete the item ${itemId}?`
@@ -97,10 +99,10 @@ const ItemListPage: React.FC = () => {
                 display: "inline-block",
                 padding: "10px 20px",
                 color: "white",
-                textDecoration: "none", // Use camelCase for inline styles
-                borderRadius: "5px", // Use camelCase for inline styles
-                marginTop: "20px", // Use camelCase for inline styles
-                fontWeight: "bold", // Use camelCase for inline styles
+                textDecoration: "none",
+                borderRadius: "5px",
+                marginTop: "20px",
+                fontWeight: "bold",
               }}
             >
               {" "}

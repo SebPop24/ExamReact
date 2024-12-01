@@ -3,9 +3,10 @@ import { Modal, Button } from "react-bootstrap";
 import "../assets/css/Details.css";
 import { Link } from "react-router-dom";
 
+//Defines props for a `Details` component, including modal visibility, item details, and callback functions for updating and deleting an item.
 interface DetailsProps {
-  showModal: boolean; // Added this prop to control the visibility of the modal
-  handleClose: () => void; // Added this prop to close the modal
+  showModal: boolean;
+  handleClose: () => void;
   name: string;
   hasGreenKeyhole: boolean;
   imageUrl: string;
@@ -21,8 +22,9 @@ interface DetailsProps {
 }
 
 const Details: React.FC<DetailsProps> = ({
-  showModal, // Use this to control modal visibility
-  handleClose, // Function to handle modal close
+  //Renders a modal displaying detailed information about an item, including an image, nutritional facts, and actions for updating or deleting the item.
+  showModal,
+  handleClose,
   name,
   hasGreenKeyhole,
   imageUrl,

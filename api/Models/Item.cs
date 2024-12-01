@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Exam.Models
 {
+    //Defines Item with validation for input fields and nutritional data.
 
     public class Item
     {

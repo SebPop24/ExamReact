@@ -3,10 +3,13 @@ import "../assets/css/Login.css";
 
 const Login = () => {
   return (
+    // Functional component for the Login page
     <div className="login">
       <div className="container-fluid">
         <div className="row min-vh-100">
           <div className="col-md-6 d-none d-md-flex flex-column align-items-center left-section">
+            {" "}
+            {/* Making left side with register button + image*/}
             <h2>New here?</h2>
             <p>Register yourself to access our services.</p>
             <Link to="/register" className="btn btn-outline-light mt-3">
@@ -20,10 +23,14 @@ const Login = () => {
             />
           </div>
           <div className="col-md-6 d-flex align-items-center justify-content-center">
+            {" "}
+            {/* Code for right side for login*/}
             <div className="col-md-8 col-lg-6">
               <h1 className="text-center mb-4">Sign In</h1>
               <form className="text-center w-100" style={{ maxWidth: "400px" }}>
                 <div className="form-group position-relative mb-3">
+                  {" "}
+                  {/* Form with input + icon*/}
                   <span className="icon position-absolute">
                     <svg
                       width="20"
@@ -47,6 +54,8 @@ const Login = () => {
                   />
                 </div>
                 <div className="form-group position-relative mb-3">
+                  {" "}
+                  {/* Form with input + icon*/}
                   <span className="icon position-absolute">
                     <svg
                       width="20"

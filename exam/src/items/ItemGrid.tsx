@@ -4,12 +4,15 @@ import { Item } from "../types/item";
 import Details from "./ItemModal"; // Import your updated Details component
 import "../assets/css/Grid.css";
 
+//Defines props for `ItemGrid`, including an array of items, the API URL, and a callback for item deletion.
 interface ItemGridProps {
   items: Item[];
   apiUrl: string;
   onItemDeleted: (itemId: number) => void;
 }
 
+// Defines `ItemGrid` component to display items, manage modal visibility for details, and convert energy values to kcal.
+// Includes handlers for card clicks and modal closure.
 const ItemGrid: React.FC<ItemGridProps> = ({
   items,
   apiUrl,
@@ -85,8 +88,8 @@ const ItemGrid: React.FC<ItemGridProps> = ({
           carbohydrate={selectedItem.karbohydrat}
           salt={selectedItem.salt}
           itemId={selectedItem.itemId}
-          onUpdate={(id) => console.log(`Update item ${id}`)} // Replace with actual update logic
-          onDelete={onItemDeleted} // Replace with actual delete logic
+          onUpdate={(id) => console.log(`Update item ${id}`)}
+          onDelete={onItemDeleted}
         />
       )}
     </>

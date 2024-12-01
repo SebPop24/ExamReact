@@ -4,6 +4,7 @@ import "../assets/css/Layout.css";
 
 const NavMenu: React.FC = () => {
   return (
+    //NavBar info with logo, dropdown menu and links
     <header>
       <Navbar expand="lg" className="navbar-custom">
         <Container fluid>

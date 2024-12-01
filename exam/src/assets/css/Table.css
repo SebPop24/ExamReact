@@ -1,56 +1,55 @@
+/* Wrapper for table with scrollable vertical content */
 .table {
   overflow-y: auto;
 }
 
+/* Background styling for the table section */
 .tablebackground {
-  background-color: #f1fff6; /* Lys grønn bakgrunn */
+  background-color: #f1fff6;
 }
 
+/* Main table styling */
 .table table {
   width: 100%;
-  border-collapse: collapse; /* Sikrer at celler deler kantlinjer */
-  background-color: white; /* Bakgrunnsfarge for tabellen */
-  border: 1px solid #ddd; /* Legger til en lys grå ramme rundt hele tabellen */
+  border-collapse: collapse;
+  background-color: white;
+  border: 1px solid #ddd;
 }
 
-/* Header-styling */
+/* Header styling for table columns */
 .table thead th {
-  background-color: #05954f; /* Velg ønsket bakgrunnsfarge for headeren */
-  color: white; /* Tekstfarge */
-  font-weight: bold; /* Fet skrift */
-  border: 1px solid #ddd; /* Legger til ramme mellom headercellene */
-  text-align: center; /* Justerer teksten midtstilt */
+  background-color: #05954f;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  text-align: center;
 }
 
-/* Cellestil (vanlig innhold) */
+/* Styling for table cells */
 .table td,
 th {
-  padding: 10px; /* Gjør cellene mer lesbare */
-  border: 1px solid #ddd; /* Gir hver celle en lys grå ramme */
-  text-align: left; /* Venstrejustering for tekst */
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
-/* Stripede rader for bedre lesbarhet */
+/* Styling for even rows */
 .table tbody tr:nth-child(even) {
-  background-color: #f9f9f9; /* Lys grå for partallsrader */
+  background-color: #f9f9f9;
 }
 
+/* Styling for odd rows */
 .table tbody tr:nth-child(odd) {
-  background-color: white; /* Hvit for oddetallsrader */
+  background-color: white;
 }
 
+/* Styling for action links in the table */
 .table .action-links {
   display: flex;
   gap: 12px;
 }
 
-.table .action-links a {
-  font-weight: bold;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-
+/* Styling for update link buttons */
 .table .update-link {
   color: #28a745;
   text-decoration: none;
@@ -65,6 +64,7 @@ th {
   background-color: #28a745;
 }
 
+/* Styling for delete link buttons */
 .table .delete-link {
   color: #dc3545;
   text-decoration: none;
@@ -79,6 +79,7 @@ th {
   background-color: #dc3545;
 }
 
+/* Styling for keyhole icons in the table */
 .table .keyhole-icon {
   width: 25px;
   height: auto;
@@ -86,9 +87,10 @@ th {
   margin: 0 auto;
 }
 
+/* Modal content adjustments for medium screens */
 @media (min-width: 768px) {
   .table .modal-content {
-    width: 500px; /* Fixed width on medium screens */
-    height: auto; /* Allow height to adapt */
+    width: 500px;
+    height: auto;
   }
 }

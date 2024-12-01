@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Details from "./ItemModal"; // Import your updated Details component
 import "../assets/css/Table.css";
 
+// Defines props for `ItemTable`, including the list of items, API URL, a callback for item deletion, and an optional authentication flag.
 interface ItemTableProps {
   items: Item[];
   apiUrl: string;
@@ -12,6 +13,7 @@ interface ItemTableProps {
   isAuthenticated?: boolean;
 }
 
+// Defines `ItemTable` component to display items in a table, manages modal visibility for item details, and handles row clicks to display detailed information.
 const ItemTable: React.FC<ItemTableProps> = ({
   items,
   apiUrl,
@@ -31,6 +33,7 @@ const ItemTable: React.FC<ItemTableProps> = ({
   };
 
   return (
+    // Table with info from our database + update and delete button
     <>
       <div className="table">
         <Table striped bordered style={{ overflowY: "scroll" }}>

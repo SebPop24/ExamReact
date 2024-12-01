@@ -2,6 +2,7 @@ import "../assets/css/Register.css";
 
 const Register = () => {
   return (
+    // Functional component for the Sign Up page
     <div className="registrer">
       <div className="container-fluid">
         <div className="row min-vh-100">
@@ -10,6 +11,8 @@ const Register = () => {
               <h1 className="text-center mb-4">Sign Up</h1>
               <form className="text-center w-100" style={{ maxWidth: "400px" }}>
                 <div className="form-group position-relative mb-3">
+                  {" "}
+                  {/* Form with input + icon*/}
                   <span className="icon position-absolute">
                     <svg
                       width="20"
@@ -33,6 +36,8 @@ const Register = () => {
                   />
                 </div>
                 <div className="form-group position-relative mb-3">
+                  {" "}
+                  {/* Form with input + icon*/}
                   <span className="icon position-absolute">
                     <svg
                       width="20"
@@ -56,6 +61,8 @@ const Register = () => {
                   />
                 </div>
                 <div className="form-group position-relative mb-3">
+                  {" "}
+                  {/* Form with input + icon*/}
                   <span className="icon position-absolute">
                     <svg
                       width="20"
@@ -85,6 +92,8 @@ const Register = () => {
             </div>
           </div>
           <div className="col-md-6 d-none d-md-flex flex-column align-items-center justify-content-center">
+            {" "}
+            {/* Left side image*/}
             <img
               src="/images/register.png"
               alt="Illustration"

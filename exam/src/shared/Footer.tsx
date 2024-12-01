@@ -3,6 +3,7 @@ import "../assets/css/Layout.css";
 
 const Footer: React.FC = () => {
   return (
+    //Footer info
     <div className="footer">
       <ul className="list-unstyled footer-contact-info">
         <li>

@@ -4,13 +4,14 @@ import { Form, Button } from "react-bootstrap";
 import { Item } from "../types/item";
 import "../assets/css/Form.css";
 
+//Props for ItemForm with callbacks and optional data.
 interface ItemFormProps {
   onItemChanged: (newItem: Item) => void;
   itemId?: number;
   isUpdate?: boolean;
   initialData?: Item;
 }
-
+// Defines ItemForm component with state for item fields, validation errors, and optional initial data.
 const ItemForm: React.FC<ItemFormProps> = ({
   onItemChanged,
   itemId,
@@ -39,6 +40,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
   );
   const navigate = useNavigate();
 
+  // Validates form fields with specific rules and returns error messages for invalid inputs.
   const validateField = (field: string, value: string) => {
     let error = "";
 
@@ -84,7 +86,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
 
     return error;
   };
-
+  // Validates the entire form, sets error messages, and returns `true` if all fields are valid.
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
 
@@ -101,6 +103,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
     return Object.values(newErrors).every((error) => !error);
   };
 
+  //Handles field blur event, validates the field, and updates errors.
   const handleBlur = (field: string, value: string) => {
     const error = validateField(field, value);
     setErrors((prevErrors) => ({
@@ -109,12 +112,14 @@ const ItemForm: React.FC<ItemFormProps> = ({
     }));
   };
 
+  // Handles field blur event, validates the field, and updates errors.
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     // Validate all fields and show all errors at once
     if (!validateForm()) return;
 
+    // Creates an `Item` object with form values, converts numeric fields, and triggers the `onItemChanged` callback.
     const item: Partial<Item> = {
       itemId,
       name,
@@ -128,11 +133,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
     };
     onItemChanged(item as Item);
   };
-
-  /*  useEffect(() => {
-    validateForm(); // Validate initial data when the form is loaded
-  }, []); */
-
+  //
   return (
     <div className="form-wrapper">
       <h2 className="form-title">
@@ -171,6 +172,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         </Form.Group>
 
         {[
+          //Defines an array of nutritional fields, each with its label, value, state setter, and error message for dynamic rendering.
           {
             label: "Energy per 100g (kJ)",
             value: energi_Kj,
@@ -201,23 +203,28 @@ const ItemForm: React.FC<ItemFormProps> = ({
             setValue: setSalt,
             error: errors.salt,
           },
-        ].map((field, index) => (
-          <Form.Group className="form-group" key={index}>
-            <Form.Control
-              type="text"
-              placeholder={field.label}
-              value={field.value}
-              onChange={(e) => field.setValue(e.target.value)}
-              onBlur={(e) =>
-                handleBlur(
-                  field.label.toLowerCase().replace(/ /g, "_"),
-                  e.target.value
-                )
-              }
-            />
-            {field.error && <p className="error-text">{field.error}</p>}
-          </Form.Group>
-        ))}
+        ].map(
+          (
+            field,
+            index //Renders form fields dynamically from an array, including validation feedback, and includes additional controls for the image URL and action buttons for submission and cancellation.
+          ) => (
+            <Form.Group className="form-group" key={index}>
+              <Form.Control
+                type="text"
+                placeholder={field.label}
+                value={field.value}
+                onChange={(e) => field.setValue(e.target.value)}
+                onBlur={(e) =>
+                  handleBlur(
+                    field.label.toLowerCase().replace(/ /g, "_"),
+                    e.target.value
+                  )
+                }
+              />
+              {field.error && <p className="error-text">{field.error}</p>}
+            </Form.Group>
+          )
+        )}
 
         <Form.Group className="form-group">
           <Form.Control

@@ -1,11 +1,11 @@
-/* ItemForm.css */
-
+/* Error message styling */
 .error-text {
   color: red;
-  font-size: 0.9em; /* Adjust font size if necessary */
-  margin-top: 0.25rem; /* Space between the input and the error */
+  font-size: 0.9em;
+  margin-top: 0.25rem;
 }
 
+/* Wrapper for the form */
 .form-wrapper {
   max-width: 500px;
   margin: 2rem auto;
@@ -15,6 +15,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Title styling for the form */
 .form-title {
   color: #2b7a4b;
   text-align: center;
@@ -23,16 +24,19 @@
   font-weight: 600;
 }
 
+/* Styling for the form structure */
 .custom-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/* Individual form group styling */
 .form-group {
   margin-bottom: 1rem;
 }
 
+/* Input field styling */
 .form-control {
   width: 100%;
   padding: 0.75rem;
@@ -41,11 +45,13 @@
   font-size: 1rem;
 }
 
+/* Input field focus effect */
 .form-control:focus {
   border-color: #2b7a4b;
   box-shadow: 0 0 0 0.2rem rgba(43, 122, 75, 0.25);
 }
 
+/* Dropdown select styling */
 .form-select {
   width: 100%;
   padding: 0.75rem;
@@ -54,39 +60,45 @@
   font-size: 1rem;
 }
 
+/* Group for buttons */
 .button-group {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
 }
 
+/* Base button styling */
 .btn {
   padding: 0.5rem 1.5rem;
   border-radius: 6px;
   font-weight: 500;
 }
 
+/* Success button styling */
 .btn-success {
   background-color: #2b7a4b;
   border-color: #2b7a4b;
 }
 
+/* Hover effect for success button */
 .btn-success:hover {
   background-color: #236a3f;
   border-color: #236a3f;
 }
 
+/* Outline success button styling */
 .btn-outline-success {
   color: #2b7a4b;
   border-color: #2b7a4b;
 }
 
+/* Hover effect for outline success button */
 .btn-outline-success:hover {
   background-color: #2b7a4b;
   color: white;
 }
 
-/* Remove default number input arrows */
+/* Remove default arrows in number input fields */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;

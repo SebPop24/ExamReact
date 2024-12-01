@@ -1,3 +1,4 @@
+/* Global styling for the login page */
 .login {
   font-family: "Open Sans", sans-serif;
   background: linear-gradient(110deg, #00e4a5 55%, white 45%);
@@ -6,29 +7,28 @@
   overflow-x: hidden;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-
+/* Heading styling on the login page */
 .login h1 {
-  font-family: "Poppins", sans-serif; /* Poppins-font */
-  font-weight: 700; /* Fet tekst */
-  font-size: 2.5rem; /* Størrelse på fonten */
-  text-align: center; /* Sentrer teksten */
-  color: #343a40; /* Mørk grå farge */
-  margin-bottom: 1.5rem; /* Gi litt avstand under */
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 1.5rem;
 }
 
-/* Input-felt styling */
+/* Input field styling */
 .login .form-control {
   border-radius: 30px;
   background-color: #f0f0f0;
   border: none;
-  padding: 12px 20px 12px 45px; /* Rom for ikonet */
+  padding: 12px 20px 12px 45px;
   font-size: 1rem;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   outline: none;
 }
 
-/* Ikon-styling */
+/* Icon styling for input fields */
 .login .icon {
   position: absolute;
   left: 15px;
@@ -36,17 +36,17 @@
   transform: translateY(-50%);
   font-size: 1.2rem;
   color: #888;
-  pointer-events: none; /* Hindrer interaksjon med ikonet */
+  pointer-events: none;
 }
 
-/* Animasjon på SVG-ikon i input-felt */
+/* Focus animation for input icons */
 .login .form-group.position-relative:focus-within .icon svg path {
-  fill: #ff66b2; /* Endre farge ved fokus */
-  transform: scale(1.1); /* Gjør ikonet litt større ved fokus */
+  fill: #ff66b2;
+  transform: scale(1.1);
   transition: fill 0.3s ease, transform 0.3s ease;
 }
 
-/* Knapp med hover-animasjon */
+/* Primary button styling */
 .login .btn-primary {
   background-color: #ff66b2;
   border: none;
@@ -65,7 +65,8 @@
   transform: scale(1.05);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
-/* Right-side Circle - Adjusted Background */
+
+/* Styling for the left section of the login page */
 .login .left-section {
   position: relative;
   color: white;
@@ -77,60 +78,29 @@
   align-items: center;
   overflow: hidden;
   box-shadow: none;
-  z-index: 2; /* Ensure the text stays above the background */
+  z-index: 2;
 }
-
-@media only screen and (min-width: 1000px) {
-  /* Background circle - placed behind everything */
-  .login .container:before {
-    content: "";
-    position: absolute;
-    height: 1500px;
-    width: 1500px;
-    top: 30%;
-    right: 50%;
-    transform: translateY(-50%);
-    background-image: linear-gradient(-45deg, #01ff9e 0%, #048654 100%);
-    transition: 1.8s ease-in-out;
-    border-radius: 50%;
-    z-index: -2; /* Placing the circle behind everything else */
-  }
-
-  .login .left-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0; /* Changed to right */
-    width: 50vw;
-    max-height: 60%;
-    background-color: #00c896;
-    border-radius: 50%;
-    z-index: -1; /* Ensure the circle is behind the text */
-    transform: translateX(50%);
-  }
-}
-
-/* Styling the heading */
+/* Heading styling in the left section */
 .login .left-section h2 {
-  font-size: 2.5rem; /* Larger for emphasis */
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #ffffff; /* Ensure it contrasts well with the background */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Styling the paragraph */
+/* Paragraph styling in the left section */
 .login .left-section p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: #f0f0f0; /* Light color for better visibility */
+  color: #f0f0f0;
   line-height: 1.6;
-  max-width: 80%; /* Restrict width for better readability */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for readability */
+  max-width: 80%;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling the Sign Up button */
-.login left-section .btn-outline-light {
+/* Button styling in the left section */
+.login .left-section .btn-outline-light {
   border: 2px solid white;
   color: white;
   background-color: transparent;
@@ -142,6 +112,6 @@
 
 .login .left-section .btn-outline-light:hover {
   background-color: white;
-  color: #00c896; /* Matches the background accent color */
-  transform: scale(1.1); /* Slight zoom effect */
+  color: #00c896;
+  transform: scale(1.1);
 }

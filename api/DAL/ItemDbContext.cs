@@ -6,11 +6,12 @@ namespace Exam.DAL;
 
 public class ItemDbContext : IdentityDbContext
 {
+    //Constructor initializes with DbContext options.
     public ItemDbContext(DbContextOptions<ItemDbContext> options) : base(options)
     {
     }
 
-    // Ensure that Items is either nullable or initialized
+    //Configures lazy loading for the Items DbSet.
     public DbSet<Item> Items { get; set; } = default!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

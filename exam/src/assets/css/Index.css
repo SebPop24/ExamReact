@@ -1,3 +1,4 @@
+/* Global body styling */
 body {
   font-family: "Open Sans", sans-serif;
   color: #343a40;
@@ -6,6 +7,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Background styling for the index page */
 .index {
   background: radial-gradient(
       circle at 0% 0%,
@@ -24,18 +26,21 @@ body {
     ),
     white;
 }
-/* Ensure content stays above the gradient */
+
+/* Container to ensure content stays above the gradient */
 .index .container {
   position: relative;
   z-index: 1;
 }
 
+/* Homepage container layout */
 .index .homepage-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
+/* Styling for homepage text section */
 .index .homepage-text {
   flex: 1;
   text-align: left;
@@ -44,19 +49,20 @@ body {
   animation: fadeInUp 0.8s ease-out;
 }
 
-/* Typography */
+/* Styling for main headings on the index page */
 .index h1 {
   font-size: 3rem;
   font-weight: 800;
   color: #39a554;
   margin-bottom: 2rem;
-  line-height: 1.3; /* Reduced line height for tighter text */
-  letter-spacing: -0.02em; /* Slightly tighter letter spacing */
+  line-height: 1.3;
+  letter-spacing: -0.02em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  max-width: 800px; /* Control maximum width */
+  max-width: 800px;
   animation: float 6s ease-in-out infinite;
 }
 
+/* Animation for floating effect */
 @keyframes float {
   0%,
   100% {
@@ -67,6 +73,7 @@ body {
   }
 }
 
+/* Styling for the emphasized journey text */
 .index h1 .journey {
   position: relative;
   display: inline-block;
@@ -78,12 +85,13 @@ body {
   bottom: -4px;
   left: 0;
   width: 100%;
-  height: 4px; /* Much thinner line */
+  height: 4px;
   background-color: #4caf50;
-  border-radius: 100% 100% 100% 100% / 0% 0% 150% 150%; /* Much more subtle curve */
-  transform: translateY(2px); /* Just a slight downward shift */
+  border-radius: 100% 100% 100% 100% / 0% 0% 150% 150%;
+  transform: translateY(2px);
 }
 
+/* Paragraph styling on index page */
 .index p {
   font-size: 1.8rem;
   color: #2c3e50;
@@ -95,14 +103,14 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
+/* Image styling for homepage */
 .index .homepage-image {
-  max-width: 500px; /* Adjust this value to your desired size */
+  max-width: 500px;
   width: 100%;
-  margin: 0 auto; /* This will center it if needed */
+  margin: 0 auto;
 }
 
-/* Features Section */
-/* Features Section */
+/* Features section layout */
 .index .features-section {
   display: flex;
   flex-wrap: wrap;
@@ -110,6 +118,7 @@ body {
   gap: 2rem;
 }
 
+/* Styling for individual feature cards */
 .index .features-card {
   display: flex;
   flex-wrap: wrap;
@@ -117,6 +126,7 @@ body {
   gap: 2rem;
 }
 
+/* Feature item card design */
 .index .feature-item {
   display: flex;
   flex-direction: column;
@@ -143,17 +153,19 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   width: 250px;
-  height: 250px; /* Set fixed height */
+  height: 250px;
   transition: all 0.4s ease;
   position: relative;
 }
 
+/* Hover effect for feature cards */
 .index .feature-item:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12),
     inset 0 0 0 2px rgba(57, 165, 84, 0.3);
 }
 
+/* Heading inside feature cards */
 .index .feature-item h4 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -162,19 +174,20 @@ body {
   min-height: 40px;
 }
 
+/* Description text inside feature cards */
 .index .feature-item p {
   font-size: 0.9rem;
   margin: 0.8rem 0;
   min-height: 50px;
-  flex-grow: 1; /* Allow paragraph to fill available space */
+  flex-grow: 1;
 }
 
-/* Position the button at the bottom */
+/* Positioning button at the bottom of feature cards */
 .index .feature-item .small-button {
-  margin-top: auto; /* Push button to bottom */
+  margin-top: auto;
 }
 
-/* Button styles */
+/* Styling for small buttons */
 .index .small-button {
   display: inline-block;
   padding: 0.6rem 1.2rem;
@@ -204,6 +217,7 @@ body {
   text-decoration: none !important;
 }
 
+/* Styling for feature icons */
 .index .features-icon {
   font-size: 2rem;
   color: #39a554;
@@ -216,7 +230,7 @@ body {
   color: #45b563;
 }
 
-/* Animations */
+/* Fade-in animation for text elements */
 @keyframes fadeInUp {
   from {
     opacity: 0;

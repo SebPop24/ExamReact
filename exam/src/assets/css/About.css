@@ -1,15 +1,18 @@
 .about-page {
+  /* Main container for the About page layout */
   padding-top: 7rem;
-  background-color: #f1fff6; /* Lys grønn bakgrunn */
+  background-color: #f1fff6;
 }
 
 /* Header styling */
 .about-page .about-header {
+  /* Header section for the About page */
   text-align: center;
   margin-bottom: 2.5rem;
 }
 
 .about-page .about-subtitle {
+  /* Subtitle text styling under the header */
   color: #39a554;
   font-size: 1.3rem;
   font-weight: 600;
@@ -20,6 +23,7 @@
 }
 
 .about-page .about-main-title {
+  /* Main title styling for the About page */
   background: linear-gradient(to right, #39a554, #66bb6a);
   -webkit-background-clip: text; /* For Chrome, Safari, Opera */
   -moz-background-clip: text; /* For older Firefox */
@@ -36,6 +40,7 @@
 
 /* Feature section styling */
 .about-page .features {
+  /* Container for the feature section */
   display: flex;
   justify-content: space-around;
   text-align: center;
@@ -44,6 +49,7 @@
 }
 
 .about-page .feature-item {
+  /* Individual feature card styling */
   flex: 1;
   max-width: 320px;
   padding: 2rem 0;
@@ -51,6 +57,7 @@
 }
 
 .about-page .feature-logo {
+  /* Logo/icon styling for feature items */
   width: 64px;
   height: 64px;
   fill: var(--first-color);
@@ -59,10 +66,12 @@
 }
 
 .about-page .feature-logo:hover {
+  /* Hover animation for feature logos */
   transform: scale(1.1);
 }
 
 .about-page .feature-title {
+  /* Title text styling for feature items */
   font-size: 1.5rem;
   font-weight: 700;
   background: linear-gradient(to right, #39a554, #66bb6a);
@@ -77,6 +86,7 @@
 }
 
 .about-page .feature-description {
+  /* Description text for feature items */
   font-size: 0.95rem;
   color: #666;
   font-style: italic;
@@ -87,18 +97,22 @@
 
 /* Divider */
 .about-page .divider {
+  /* Horizontal divider for sections */
   width: 100%;
   height: 1px;
   background-color: #ddd;
   margin: 3rem auto;
 }
+
 .about-page .cta-container {
+  /* Container for call-to-action section */
   text-align: center;
   margin-top: 3rem;
 }
 
 /* CTA button */
 .about-page .cta-button {
+  /* Call-to-action button styling */
   display: inline-block;
   padding: 0.8rem 2.5rem;
   background-color: #39a554;
@@ -116,6 +130,7 @@
 }
 
 .about-page .cta-button::before {
+  /* Styling for the button's hover effect */
   content: "";
   position: absolute;
   top: 0;
@@ -128,5 +143,6 @@
 }
 
 .about-page .cta-button:hover::before {
+  /* Animation for the hover effect */
   left: 125%;
 }

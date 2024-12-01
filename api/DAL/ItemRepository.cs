@@ -26,7 +26,7 @@ public class ItemRepository : IItemRepository
         }
         catch (Exception e)
         {
-             // Logs an error if the retrieval fails
+            // Logs an error if the retrieval fails
             _logger.LogError("[ItemRepository] items ToListAsync() failed when GetAll(), error message: {e}", e.Message);
             return null;
         }
@@ -75,7 +75,7 @@ public class ItemRepository : IItemRepository
         }
         catch (Exception e)
         {
-             // Logs an error if updating fails
+            // Logs an error if updating fails
             _logger.LogError("[ItemRepository] item FindAsync(id) failed when updating the ItemId {ItemId:0000}, error message: {e}", item, e.Message);
             return false;
         }

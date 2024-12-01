@@ -6,11 +6,14 @@ import API_URL from "../apiConfig";
 import "../assets/css/Index.css";
 
 const HomePage = () => {
+  // Functional component for the About page
   return (
     <div className="index">
       <div className="main-content">
         <div className="gradient-background"></div>
         <div className="container">
+          {" "}
+          {/* Container with Title and Carousel images*/}
           <div className="homepage-container">
             <div className="homepage-text">
               <h1>
@@ -47,6 +50,8 @@ const HomePage = () => {
         </div>
 
         <section className="features-section">
+          {" "}
+          {/* Feature card with links and styling*/}
           <div className="features-card">
             <div className="feature-item">
               <h4>Add New Foods</h4>

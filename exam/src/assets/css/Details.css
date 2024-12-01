@@ -1,62 +1,65 @@
-/* Generelle tabellinnstillinger */
-
 .item-header {
-  font-weight: bold; /* Gjør teksten fet */
-  font-size: 1.8rem; /* Juster fontstørrelse hvis nødvendig */
-  color: #333; /* Valgfritt: Endre tekstfargen */
+  /* Table header styling */
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #333;
 }
 
 .details table {
+  /* Main table styling */
   width: 100%;
-  border-collapse: collapse !important; /* Sikrer at kantene ikke dobles */
-  background-color: white; /* Hvit bakgrunn for tabellen */
-  border: 2px solid #ccc !important; /* Tydelig ramme rundt hele tabellen */
+  border-collapse: collapse !important;
+  background-color: white;
+  border: 2px solid #ccc !important;
 }
 
-/* Style for celler */
 .details td,
 th {
-  border: 2px solid #ccc !important; /* Tydelige rammer rundt hver celle */
-  padding: 10px; /* Ekstra padding for lesbarhet */
-  text-align: left; /* Venstrejustert tekst */
-  font-size: 1rem; /* Standard skriftstørrelse */
-  color: #555; /* Tekstfarge */
+  /* Styling for table cells */
+  border: 2px solid #ccc !important;
+  padding: 10px;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
 }
 
 .details tbody tr:nth-child(odd) {
-  background-color: white; /* Hvit bakgrunn for oddetallsrader */
+  /* Background for odd rows */
+  background-color: white;
 }
 
-/* Style for første kolonne (f.eks. labels) */
 .details details td:first-child {
+  /* Styling for the first column */
   font-weight: bold;
-  color: #333; /* Mørkere tekstfarge for tydelighet */
+  color: #333;
 }
 
-/* Bakgrunnsfarge for partallsrader (stripede rader) */
 .details details tr:nth-child(even) {
-  background-color: #f2f2f2 !important; /* Litt lysere grå for å skille rader */
+  /* Background for even rows */
+  background-color: #f2f2f2 !important;
 }
 
-/* Nutrition table container */
 .details .nutrition-table-container {
-  background-color: #f9f9f9 !important; /* Lys grå bakgrunn rundt tabellen */
-  border-radius: 8px; /* Runde kanter for en moderne stil */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Myk skygge */
+  /* Container around the nutrition table */
+  background-color: #f9f9f9 !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .details div.nutrition-details .nutrition-table-container {
+  /* Nutrition table margin adjustment */
   margin-top: -20px;
 }
-/* Style for nøkkelhullsmerke */
+
 .keyhole-icon {
-  width: 30px; /* Ikonets bredde */
-  height: auto; /* Bevarer proporsjonene */
-  margin-left: 10px; /* Avstand mellom navn og ikon */
+  /* Keyhole icon styling */
+  width: 30px;
+  height: auto;
+  margin-left: 10px;
 }
 
-/* Style for summary i subtile knappestil */
 .details .summary-subtle {
+  /* Styling for dropdown summary */
   font-weight: bold;
   font-size: 1.1rem;
   cursor: pointer;
@@ -68,30 +71,33 @@ th {
   transition: background-color 0.2s;
 }
 
-/* Hover-effekt for summary */
 .details .summary-subtle:hover {
+  /* Hover effect for summary */
   background-color: #f1f1f1;
 }
 
-/* Roter pilen når "details" er åpnet */
 .details details[open] .summary-subtle::after {
+  /* Rotate arrow when details open */
   transform: rotate(180deg);
 }
 
-/* Pilstil */
 .details .summary-subtle::after {
+  /* Arrow styling */
   content: "▼";
   font-size: 0.9rem;
   color: #666;
   transform: rotate(0deg);
   transition: transform 0.2s ease;
 }
+
 .details .action-links {
+  /* Action link container */
   display: flex;
   gap: 12px;
 }
 
 .details .action-links a {
+  /* Action link styling */
   font-weight: bold;
   text-decoration: none;
   padding: 5px 10px;
@@ -99,6 +105,7 @@ th {
 }
 
 .details .update-link {
+  /* Update button styling */
   color: #28a745;
   background: #fff;
   margin-top: 10px;
@@ -110,11 +117,13 @@ th {
 }
 
 .details .update-link:hover {
+  /* Hover effect for update button */
   color: white;
   background-color: #28a745;
 }
 
 .details .delete-link {
+  /* Delete button styling */
   color: #dc3545;
   background: #fff;
   margin-top: 10px;
@@ -126,6 +135,7 @@ th {
 }
 
 .details .delete-link:hover {
+  /* Hover effect for delete button */
   color: white;
   background-color: #dc3545;
 }
