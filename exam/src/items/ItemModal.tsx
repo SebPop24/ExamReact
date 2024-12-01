@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import "../assets/css/Details.css";
+import { Link } from "react-router-dom";
 
 interface DetailsProps {
   showModal: boolean; // Added this prop to control the visibility of the modal
@@ -99,12 +100,10 @@ const Details: React.FC<DetailsProps> = ({
                   </table>
                 </div>
                 <div className="static-actions mb-3">
-                  <button
-                    className="update-link"
-                    onClick={() => onUpdate(itemId)}
-                  >
+                  <Link to={`/itemupdate/${itemId}`} className="update-link">
+                    {" "}
                     Update
-                  </button>
+                  </Link>
                   <button
                     className="delete-link"
                     onClick={() => onDelete(itemId)}

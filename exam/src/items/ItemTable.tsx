@@ -133,7 +133,10 @@ const ItemTable: React.FC<ItemTableProps> = ({
             salt={selectedItem.salt}
             itemId={selectedItem.itemId}
             onUpdate={(id) => console.log(`Update item ${id}`)} // Replace with actual update logic
-            onDelete={(id) => console.log(`Delete item ${id}`)} // Replace with actual delete logic
+            onDelete={() => {
+              onItemDeleted(selectedItem.itemId);
+              setShowModal(false);
+            }} // Replace with actual delete logic
           />
         )}
       </div>

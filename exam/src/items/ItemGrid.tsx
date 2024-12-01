@@ -46,7 +46,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({
                   className="w-100"
                 >
                   <img
-                    src={`${apiUrl}${item.imageUrl}`}
+                    src={`${item.imageUrl}`}
                     className="img-fluid custom-image-size card-img-top"
                     alt={item.name}
                   />
@@ -86,7 +86,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({
           salt={selectedItem.salt}
           itemId={selectedItem.itemId}
           onUpdate={(id) => console.log(`Update item ${id}`)} // Replace with actual update logic
-          onDelete={(id) => console.log(`Delete item ${id}`)} // Replace with actual delete logic
+          onDelete={onItemDeleted} // Replace with actual delete logic
         />
       )}
     </>

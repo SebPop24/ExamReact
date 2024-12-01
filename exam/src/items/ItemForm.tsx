@@ -74,7 +74,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         }
         break;
       case "imageUrl":
-        if (!value.match(/^https?:\/\/.+$/)) {
+        if (!value.match(/^(https?:\/\/|\/images)/)) {
           error = "Please enter a valid URL starting with http:// or https://.";
         }
         break;
