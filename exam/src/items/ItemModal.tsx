@@ -105,6 +105,7 @@ const Details: React.FC<DetailsProps> = ({
                     Update
                   </Link>
                   <button
+                    style={{ marginLeft: "5px" }}
                     className="delete-link"
                     onClick={() => onDelete(itemId)}
                   >
