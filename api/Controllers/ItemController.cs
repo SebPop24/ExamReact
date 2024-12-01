@@ -1,12 +1,8 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Exam.DAL;
 using Exam.Models;
-using Exam.ViewModels;
 using Exam.DTOs;
 using Exam.Utilities;
-//using Exam.Attributes;
-//using Exam.Utilities;
 namespace Exam.Controllers;
 
 
@@ -15,10 +11,10 @@ namespace Exam.Controllers;
 public class ItemAPIController : Controller
 {
     private readonly IItemRepository _itemRepository;
-    private readonly ILogger<ItemController> _logger;
+    private readonly ILogger<ItemAPIController> _logger;
 
     //Initializes the controller with dependencies for database operations and logging.
-    public ItemAPIController(IItemRepository itemRepository, ILogger<ItemController> logger)
+    public ItemAPIController(IItemRepository itemRepository, ILogger<ItemAPIController> logger)
     {
         _itemRepository = itemRepository;
         _logger = logger;
@@ -135,133 +131,5 @@ public class ItemAPIController : Controller
             return BadRequest("Item deletion failed");
         }
         return NoContent(); // 200 Ok is commonly used when the server returns a response body with additional information about the result of the request. For a DELETE operation, there's generally no need to return additional data, making 204 NoContent a better fit.
-    }
-
-
-}
-public class ItemController : Controller
-{
-    private readonly IItemRepository _itemRepository;
-    private readonly ILogger<ItemController> _logger;
-    //Initializes the controller with dependencies for data operations and logging.
-    public ItemController(IItemRepository itemRepository, ILogger<ItemController> logger)
-    {
-        _itemRepository = itemRepository;
-        _logger = logger;
-    }
-    //Displays all items in a table view, or returns "Not Found" if the list is empty.
-    public async Task<IActionResult> Table()
-    {
-        var items = await _itemRepository.GetAll();
-        if (items == null)
-        {
-            _logger.LogError("[ItemController] Item list not found while executing _itemRepository.GetAll()");
-            return NotFound("Item list not found");
-        }
-        var itemsViewModel = new ItemsViewModel(items, "Table");
-        return View(itemsViewModel);
-    }
-
-    //Displays all items in a grid view, or returns "Not Found" if the list is empty.
-    public async Task<IActionResult> Grid()
-    {
-        var items = await _itemRepository.GetAll();
-        if (items == null)
-        {
-            _logger.LogError("[ItemController] Item list not found while executing _itemRepository.GetAll()");
-            return NotFound("Item list not found");
-        }
-        var itemsViewModel = new ItemsViewModel(items, "Grid");
-        return View(itemsViewModel);
-    }
-
-    //Displays details of an item by ID, or returns "Not Found" if the item doesn't exist.
-    public async Task<IActionResult> Details(int id)
-    {
-        var item = await _itemRepository.GetItemById(id);
-        if (item == null)
-        {
-            _logger.LogError("[ItemController] Item not found for the ItemId {ItemId:0000}", id);
-            return NotFound("Item not found for the ItemId");
-        }
-        return View(item);
-    }
-
-    //Displays the form for creating a new item.
-    [HttpGet]
-    [Authorize]
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    //Creates a new item if the model is valid, redirecting to the table view or returning the form with errors.
-    [HttpPost]
-    [Authorize]
-    public async Task<IActionResult> Create(Item item)
-    {
-        if (ModelState.IsValid)
-        {
-            bool returnOk = await _itemRepository.Create(item);
-            if (returnOk)
-                return RedirectToAction(nameof(Table));
-        }
-        _logger.LogWarning("[ItemController] Item creation failed {@item}", item);
-        return View(item);
-    }
-
-    //Displays the update form for an item by ID, or returns an error if the item is not found.
-    [HttpGet]
-    [Authorize]
-    public async Task<IActionResult> Update(int id)
-    {
-        var item = await _itemRepository.GetItemById(id);
-        if (item == null)
-        {
-            _logger.LogError("[ItemController] Item not found when updating the ItemId {ItemId:0000}", id);
-            return BadRequest("Item not found for the ItemId");
-        }
-        return View(item);
-    }
-    //Updates an item if the model is valid, redirecting to the table view or returning the form with errors.
-    [HttpPost]
-    [Authorize]
-    public async Task<IActionResult> Update(Item item)
-    {
-        if (ModelState.IsValid)
-        {
-            bool returnOk = await _itemRepository.Update(item);
-            if (returnOk)
-                return RedirectToAction(nameof(Table));
-        }
-        _logger.LogWarning("[ItemController] Item update failed {@item}", item);
-        return View(item);
-    }
-    //Displays the delete confirmation view for an item by ID, or returns an error if the item is not found.
-    [HttpGet]
-    [Authorize]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var item = await _itemRepository.GetItemById(id);
-        if (item == null)
-        {
-            _logger.LogError("[ItemController] Item not found for the ItemId {ItemId:0000}", id);
-            return BadRequest("Item not found for the ItemId");
-        }
-        return View(item);
-    }
-
-    //Deletes an item by ID, redirecting to the table view if successful or returning an error if it fails.
-    [HttpPost]
-    [Authorize]
-    public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        bool returnOk = await _itemRepository.Delete(id);
-        if (!returnOk)
-        {
-            _logger.LogError("[ItemController] Item deletion failed for the ItemId {ItemId:0000}", id);
-            return BadRequest("Item deletion failed");
-        }
-        return RedirectToAction(nameof(Table));
     }
 }
