@@ -17,12 +17,13 @@ public class ItemAPIController : Controller
     private readonly IItemRepository _itemRepository;
     private readonly ILogger<ItemController> _logger;
 
+    //Initializes the controller with dependencies for database operations and logging.
     public ItemAPIController(IItemRepository itemRepository, ILogger<ItemController> logger)
     {
         _itemRepository = itemRepository;
         _logger = logger;
     }
-
+    //Retrieves all items, converts them to DTOs, and returns them or a "Not Found" error if empty.
     [HttpGet("itemlist")]
     public async Task<IActionResult> ItemList()
     {
@@ -48,7 +49,7 @@ public class ItemAPIController : Controller
         return Ok(itemDtos);
     }
 
-
+    //Creates a new item from the DTO, saves it, and returns it or a 500 error if creation fails.
     [HttpPost("create")]
     public async Task<IActionResult> Create([FromBody] ItemDto itemDto)
     {
@@ -76,7 +77,7 @@ public class ItemAPIController : Controller
         _logger.LogWarning("[ItemAPIController] Item creation failed {@item}", newItem);
         return StatusCode(500, "Internal server error");
     }
-
+    //Retrieves an item by ID, returning it or a "Not Found" error if it doesn't exist.
     [HttpGet("{id}")]
     public async Task<IActionResult> GetItem(int id)
     {
@@ -89,6 +90,7 @@ public class ItemAPIController : Controller
         return Ok(item);
     }
 
+    //Updates an existing item by ID with data from the DTO, returning the updated item or a 500 error if the update fails.
     [HttpPut("update/{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] ItemDto itemDto)
     {
@@ -122,7 +124,7 @@ public class ItemAPIController : Controller
         _logger.LogWarning("[ItemAPIController] Item update failed {@item}", existingItem);
         return StatusCode(500, "Internal server error");
     }
-
+    //Deletes an item by ID, returning 204 if successful or an error if it fails.
     [HttpDelete("delete/{id}")]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
@@ -141,13 +143,13 @@ public class ItemController : Controller
 {
     private readonly IItemRepository _itemRepository;
     private readonly ILogger<ItemController> _logger;
-
+    //Initializes the controller with dependencies for data operations and logging.
     public ItemController(IItemRepository itemRepository, ILogger<ItemController> logger)
     {
         _itemRepository = itemRepository;
         _logger = logger;
     }
-
+    //Displays all items in a table view, or returns "Not Found" if the list is empty.
     public async Task<IActionResult> Table()
     {
         var items = await _itemRepository.GetAll();
@@ -160,6 +162,7 @@ public class ItemController : Controller
         return View(itemsViewModel);
     }
 
+    //Displays all items in a grid view, or returns "Not Found" if the list is empty.
     public async Task<IActionResult> Grid()
     {
         var items = await _itemRepository.GetAll();
@@ -172,6 +175,7 @@ public class ItemController : Controller
         return View(itemsViewModel);
     }
 
+    //Displays details of an item by ID, or returns "Not Found" if the item doesn't exist.
     public async Task<IActionResult> Details(int id)
     {
         var item = await _itemRepository.GetItemById(id);
@@ -183,6 +187,7 @@ public class ItemController : Controller
         return View(item);
     }
 
+    //Displays the form for creating a new item.
     [HttpGet]
     [Authorize]
     public IActionResult Create()
@@ -190,6 +195,7 @@ public class ItemController : Controller
         return View();
     }
 
+    //Creates a new item if the model is valid, redirecting to the table view or returning the form with errors.
     [HttpPost]
     [Authorize]
     public async Task<IActionResult> Create(Item item)
@@ -204,6 +210,7 @@ public class ItemController : Controller
         return View(item);
     }
 
+    //Displays the update form for an item by ID, or returns an error if the item is not found.
     [HttpGet]
     [Authorize]
     public async Task<IActionResult> Update(int id)
@@ -216,7 +223,7 @@ public class ItemController : Controller
         }
         return View(item);
     }
-
+    //Updates an item if the model is valid, redirecting to the table view or returning the form with errors.
     [HttpPost]
     [Authorize]
     public async Task<IActionResult> Update(Item item)
@@ -230,7 +237,7 @@ public class ItemController : Controller
         _logger.LogWarning("[ItemController] Item update failed {@item}", item);
         return View(item);
     }
-
+    //Displays the delete confirmation view for an item by ID, or returns an error if the item is not found.
     [HttpGet]
     [Authorize]
     public async Task<IActionResult> Delete(int id)
@@ -244,6 +251,7 @@ public class ItemController : Controller
         return View(item);
     }
 
+    //Deletes an item by ID, redirecting to the table view if successful or returning an error if it fails.
     [HttpPost]
     [Authorize]
     public async Task<IActionResult> DeleteConfirmed(int id)

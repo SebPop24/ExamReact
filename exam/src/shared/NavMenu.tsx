@@ -9,7 +9,7 @@ const NavMenu: React.FC = () => {
         <Container fluid>
           <Navbar.Brand href="/">
             <img
-              src="./images/logo.png"
+              src="../assets/images/logo.png"
               height="40"
               className="d-inline-block align-top me-2"
               alt="Logo"
