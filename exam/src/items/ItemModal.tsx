@@ -69,7 +69,7 @@ const Details: React.FC<DetailsProps> = ({
               {/* Nutritional Information in a dropdown that starts open */}
               <details className="nutrition-details" open>
                 <summary className="summary-subtle">
-                  Næringsinnhold per 100 gram
+                  Nutritional content per 100 gram
                 </summary>
                 <div className="nutrition-table-container">
                   <table>
@@ -79,11 +79,11 @@ const Details: React.FC<DetailsProps> = ({
                         <td>{foodGroup}</td>
                       </tr>
                       <tr>
-                        <td>Energi:</td>
+                        <td>Energy:</td>
                         <td>{energyKj} kj</td>
                       </tr>
                       <tr>
-                        <td>Fett:</td>
+                        <td>Fat:</td>
                         <td>{fat} g</td>
                       </tr>
                       <tr>
@@ -91,7 +91,7 @@ const Details: React.FC<DetailsProps> = ({
                         <td>{protein} g</td>
                       </tr>
                       <tr>
-                        <td>Karbohydrat:</td>
+                        <td>Carbohydrates:</td>
                         <td>{carbohydrate} g</td>
                       </tr>
                       <tr>
