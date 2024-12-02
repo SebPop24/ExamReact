@@ -165,7 +165,7 @@ public static class DBInit
 
                 new Item
                 {
-                    Name = "Pepsi Max 1,5l",
+                    Name = "Pepsi Max 0,5l",
                     Food_Group = "Beverages",
                     Energi_Kj = 1.7,
                     Fett = 0.0,
@@ -173,7 +173,7 @@ public static class DBInit
                     Karbohydrat = 0.0,
                     Salt = 0.02,
                     HasGreenKeyhole = false,
-                    ImageUrl = "/images/pepsi_max.jpg"
+                    ImageUrl = "/images/pepsi_max.png"
                 }
             };
 
