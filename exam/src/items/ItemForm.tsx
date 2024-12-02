@@ -55,8 +55,9 @@ const ItemForm: React.FC<ItemFormProps> = ({
 
     switch (field) {
       case "name":
-        if (!value.match(/^[a-zA-ZæøåÆØÅ]{2,50}$/)) {
-          error = "Name must be 2-50 letters long";
+        if (!value.match(/^[a-zA-ZæøåÆØÅ ]{2,50}$/)) {
+          error =
+            "Name must be 2-50 letters long and contain only letters and spaces";
         }
         break;
       case "food_Group":

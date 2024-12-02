@@ -60,8 +60,6 @@
   /* Logo/icon styling for feature items */
   width: 64px;
   height: 64px;
-  fill: var(--first-color);
-  margin-bottom: var(--mb-2);
   transition: transform 0.3s ease;
 }
 

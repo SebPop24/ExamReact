@@ -140,7 +140,7 @@ public static class DBInit
                 },
                 new Item
                 {
-                    Name = "Norvegia 26% Skivet",
+                    Name = "Norvegia Skivet",
                     Food_Group = "Dairy",
                     Energi_Kj = 1400,
                     Fett = 26,
@@ -152,7 +152,7 @@ public static class DBInit
 
                 new Item
                 {
-                    Name = "Gulrot 400g",
+                    Name = "Gulrot",
                     Food_Group = "Vegetables",
                     Energi_Kj = 150,
                     Fett = 0.2,
@@ -165,7 +165,7 @@ public static class DBInit
 
                 new Item
                 {
-                    Name = "Pepsi Max 0,5l",
+                    Name = "Pepsi Max",
                     Food_Group = "Beverages",
                     Energi_Kj = 1.7,
                     Fett = 0.0,
